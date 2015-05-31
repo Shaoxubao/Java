@@ -19,10 +19,10 @@ import com.msm.service.IUserService;
 @Controller
 @SessionAttributes("loginUser")
 public class LoginController {
-    
+
     @Autowired
     private IUserService userService;
-    
+
     /**
      * 登录
      */
@@ -30,14 +30,14 @@ public class LoginController {
     public String login() {
         return "login";
     }
-    
+
     @RequestMapping(value="/login", method=RequestMethod.POST)
     public String login(String username, String password, Model model, HttpServletRequest req, HttpServletResponse res) {
         User user = userService.loadByUsername(username);
         if (null == user){ // 用户名和密码判断
             return "login";
         }
-        
+
         User u = userService.login(username, password);
         model.addAttribute("loginUser", u);
         String userPos = u.getUserPosition();
@@ -47,9 +47,9 @@ public class LoginController {
             return "sample/regi_main";
         } else {
              return null;
-        }              
+        }
     }
-    
+
     /**
      * 注销
      */
