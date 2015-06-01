@@ -109,7 +109,7 @@ public class UserController {
     }
 
     /**
-     *  用户个人信息查询模块
+     *  用户个人信息查询
      */
     @RequestMapping(value="/show", method=RequestMethod.GET)
     public String show(Model model) {
