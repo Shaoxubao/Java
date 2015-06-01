@@ -1,0 +1,23 @@
+package com.msm.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+/**
+ * 样品标准表
+ */
+@Entity
+@Table(name="t_standard")
+public class SampleStandard {
+	private int sampleId; //
+	private String sampleNo; //
+	private String sampleName; //
+	private String samplePurity; //
+	private String sampleComponent;//
+	private String sampleEffect; //
+	private String toxicity; //
+	private String pyrogenDegrees; //
+	private String sterility; //
+	private String phyProperty; //
+	private String impurity; //
+}

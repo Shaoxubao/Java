@@ -1,0 +1,13 @@
+package com.msm.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+/**
+ * 检品检验流程
+ */
+@Entity
+@Table(name="t_sampleFlow")
+public class SampleFlow {
+	private int sampleId;
+}

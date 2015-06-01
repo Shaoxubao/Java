@@ -1,0 +1,184 @@
+package com.msm.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+/**
+ * 检品检验流程
+ */
+@Entity
+@Table(name = "t_sampleFlow")
+public class SampleFlow {
+	private int sampleId;
+	private String sampleNo;
+	private String sampleName;
+	private String mianRev;
+	private String mianSend;
+	private String secondRev;
+	private String secondSend;
+	private String zhurenRev;
+	private String zhurenSend;
+	private String ywssqRev;
+	private String ywssqSend;
+	private String headRev;
+	private String headSend;
+	private String printRev;
+	private String printSend;
+	private String jiaoduiRev;
+	private String jiaoduiSend;
+	private String fachuRev;
+	private String fachuSend;
+
+	public int getSampleId() {
+		return sampleId;
+	}
+
+	public void setSampleId(int sampleId) {
+		this.sampleId = sampleId;
+	}
+
+	public String getSampleNo() {
+		return sampleNo;
+	}
+
+	public void setSampleNo(String sampleNo) {
+		this.sampleNo = sampleNo;
+	}
+
+	public String getSampleName() {
+		return sampleName;
+	}
+
+	public void setSampleName(String sampleName) {
+		this.sampleName = sampleName;
+	}
+
+	public String getMianRev() {
+		return mianRev;
+	}
+
+	public void setMianRev(String mianRev) {
+		this.mianRev = mianRev;
+	}
+
+	public String getMianSend() {
+		return mianSend;
+	}
+
+	public void setMianSend(String mianSend) {
+		this.mianSend = mianSend;
+	}
+
+	public String getSecondRev() {
+		return secondRev;
+	}
+
+	public void setSecondRev(String secondRev) {
+		this.secondRev = secondRev;
+	}
+
+	public String getSecondSend() {
+		return secondSend;
+	}
+
+	public void setSecondSend(String secondSend) {
+		this.secondSend = secondSend;
+	}
+
+	public String getZhurenRev() {
+		return zhurenRev;
+	}
+
+	public void setZhurenRev(String zhurenRev) {
+		this.zhurenRev = zhurenRev;
+	}
+
+	public String getZhurenSend() {
+		return zhurenSend;
+	}
+
+	public void setZhurenSend(String zhurenSend) {
+		this.zhurenSend = zhurenSend;
+	}
+
+	public String getYwssqRev() {
+		return ywssqRev;
+	}
+
+	public void setYwssqRev(String ywssqRev) {
+		this.ywssqRev = ywssqRev;
+	}
+
+	public String getYwssqSend() {
+		return ywssqSend;
+	}
+
+	public void setYwssqSend(String ywssqSend) {
+		this.ywssqSend = ywssqSend;
+	}
+
+	public String getHeadRev() {
+		return headRev;
+	}
+
+	public void setHeadRev(String headRev) {
+		this.headRev = headRev;
+	}
+
+	public String getHeadSend() {
+		return headSend;
+	}
+
+	public void setHeadSend(String headSend) {
+		this.headSend = headSend;
+	}
+
+	public String getPrintRev() {
+		return printRev;
+	}
+
+	public void setPrintRev(String printRev) {
+		this.printRev = printRev;
+	}
+
+	public String getPrintSend() {
+		return printSend;
+	}
+
+	public void setPrintSend(String printSend) {
+		this.printSend = printSend;
+	}
+
+	public String getJiaoduiRev() {
+		return jiaoduiRev;
+	}
+
+	public void setJiaoduiRev(String jiaoduiRev) {
+		this.jiaoduiRev = jiaoduiRev;
+	}
+
+	public String getJiaoduiSend() {
+		return jiaoduiSend;
+	}
+
+	public void setJiaoduiSend(String jiaoduiSend) {
+		this.jiaoduiSend = jiaoduiSend;
+	}
+
+	public String getFachuRev() {
+		return fachuRev;
+	}
+
+	public void setFachuRev(String fachuRev) {
+		this.fachuRev = fachuRev;
+	}
+
+	public String getFachuSend() {
+		return fachuSend;
+	}
+
+	public void setFachuSend(String fachuSend) {
+		this.fachuSend = fachuSend;
+	}
+
+}

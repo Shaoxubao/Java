@@ -1,0 +1,94 @@
+package com.msm.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+/**
+ * 检品采购管理
+ */
+@Entity
+@Table(name = "t_purchase")
+public class PurchaseManage {
+	private int sampleId; // 检品Id（主键）
+	private String sampleNo; // 检品编号
+	private String sampleName; // 检品名称
+	private String sampleSpecs; // 检品规格
+	private String amount; // 检品数量
+	private String source; // 检品来源
+	private String produceDate; // 检品生产日期
+	private String purchaseDate; // 采购日期
+
+	public int getSampleId() {
+		return sampleId;
+	}
+
+	public void setSampleId(int sampleId) {
+		this.sampleId = sampleId;
+	}
+
+	public String getSampleNo() {
+		return sampleNo;
+	}
+
+	public void setSampleNo(String sampleNo) {
+		this.sampleNo = sampleNo;
+	}
+
+	public String getSampleName() {
+		return sampleName;
+	}
+
+	public void setSampleName(String sampleName) {
+		this.sampleName = sampleName;
+	}
+
+	public String getSampleSpecs() {
+		return sampleSpecs;
+	}
+
+	public void setSampleSpecs(String sampleSpecs) {
+		this.sampleSpecs = sampleSpecs;
+	}
+
+	public String getAmount() {
+		return amount;
+	}
+
+	public void setAmount(String amount) {
+		this.amount = amount;
+	}
+
+	public String getSource() {
+		return source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+	}
+
+	public String getProduceDate() {
+		return produceDate;
+	}
+
+	public void setProduceDate(String produceDate) {
+		this.produceDate = produceDate;
+	}
+
+	public String getPurchaseDate() {
+		return purchaseDate;
+	}
+
+	public void setPurchaseDate(String purchaseDate) {
+		this.purchaseDate = purchaseDate;
+	}
+
+	@Override
+	public String toString() {
+		return "PurchaseManage [sampleId=" + sampleId + ", sampleNo="
+				+ sampleNo + ", sampleName=" + sampleName + ", sampleSpecs="
+				+ sampleSpecs + ", amount=" + amount + ", source=" + source
+				+ ", produceDate=" + produceDate + ", purchaseDate="
+				+ purchaseDate + "]";
+	}
+
+}

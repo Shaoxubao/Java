@@ -1,0 +1,193 @@
+package com.msm.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
+/**
+ * 检品检验流程
+ */
+@Entity
+@Table(name = "t_sampleFlow")
+public class SampleFlow {
+	private int sampleId;       // 检品Id(主键)
+	private String sampleNo;    // 检品编码
+	private String sampleName;  // 检品名称
+	private String mianRev;     // 主检科室收到日期
+	private String mianSend;    // 主检科室发出日期
+	private String secondRev;   // 会检科室收到日期
+	private String secondSend;  // 会检科室发出日期
+	private String zhurenRev;   // 科室主任审校收到日期
+	private String zhurenSend;  // 科室主任审校发出日期
+	private String ywssqRev;    // 业务管理室审签收到日期
+	private String ywssqSend;   // 业务管理室审签发出日期
+	private String headRev;     // 受权签字人审签收到日期
+	private String headSend;    // 受权签字人审签发出日期
+	private String printRev;    // 打印收到日期
+	private String printSend;   // 打印发出日期
+	private String jiaoduiRev;  // 校对收到日期
+	private String jiaoduiSend; // 校对发出日期
+	private String fachuRev;    // 最终检验报告收到日期
+	private String fachuSend;   // 最终检验报告发出日期
+
+	 @NotNull(message="检品Id号不能为空！")
+	 @GeneratedValue
+	 @Id
+	public int getSampleId() {
+		return sampleId;
+	}
+
+	public void setSampleId(int sampleId) {
+		this.sampleId = sampleId;
+	}
+
+	public String getSampleNo() {
+		return sampleNo;
+	}
+
+	@NotEmpty(message="检品编码不能为空！")
+	public void setSampleNo(String sampleNo) {
+		this.sampleNo = sampleNo;
+	}
+
+	public String getSampleName() {
+		return sampleName;
+	}
+
+	public void setSampleName(String sampleName) {
+		this.sampleName = sampleName;
+	}
+
+	public String getMianRev() {
+		return mianRev;
+	}
+
+	public void setMianRev(String mianRev) {
+		this.mianRev = mianRev;
+	}
+
+	public String getMianSend() {
+		return mianSend;
+	}
+
+	public void setMianSend(String mianSend) {
+		this.mianSend = mianSend;
+	}
+
+	public String getSecondRev() {
+		return secondRev;
+	}
+
+	public void setSecondRev(String secondRev) {
+		this.secondRev = secondRev;
+	}
+
+	public String getSecondSend() {
+		return secondSend;
+	}
+
+	public void setSecondSend(String secondSend) {
+		this.secondSend = secondSend;
+	}
+
+	public String getZhurenRev() {
+		return zhurenRev;
+	}
+
+	public void setZhurenRev(String zhurenRev) {
+		this.zhurenRev = zhurenRev;
+	}
+
+	public String getZhurenSend() {
+		return zhurenSend;
+	}
+
+	public void setZhurenSend(String zhurenSend) {
+		this.zhurenSend = zhurenSend;
+	}
+
+	public String getYwssqRev() {
+		return ywssqRev;
+	}
+
+	public void setYwssqRev(String ywssqRev) {
+		this.ywssqRev = ywssqRev;
+	}
+
+	public String getYwssqSend() {
+		return ywssqSend;
+	}
+
+	public void setYwssqSend(String ywssqSend) {
+		this.ywssqSend = ywssqSend;
+	}
+
+	public String getHeadRev() {
+		return headRev;
+	}
+
+	public void setHeadRev(String headRev) {
+		this.headRev = headRev;
+	}
+
+	public String getHeadSend() {
+		return headSend;
+	}
+
+	public void setHeadSend(String headSend) {
+		this.headSend = headSend;
+	}
+
+	public String getPrintRev() {
+		return printRev;
+	}
+
+	public void setPrintRev(String printRev) {
+		this.printRev = printRev;
+	}
+
+	public String getPrintSend() {
+		return printSend;
+	}
+
+	public void setPrintSend(String printSend) {
+		this.printSend = printSend;
+	}
+
+	public String getJiaoduiRev() {
+		return jiaoduiRev;
+	}
+
+	public void setJiaoduiRev(String jiaoduiRev) {
+		this.jiaoduiRev = jiaoduiRev;
+	}
+
+	public String getJiaoduiSend() {
+		return jiaoduiSend;
+	}
+
+	public void setJiaoduiSend(String jiaoduiSend) {
+		this.jiaoduiSend = jiaoduiSend;
+	}
+
+	public String getFachuRev() {
+		return fachuRev;
+	}
+
+	public void setFachuRev(String fachuRev) {
+		this.fachuRev = fachuRev;
+	}
+
+	public String getFachuSend() {
+		return fachuSend;
+	}
+
+	public void setFachuSend(String fachuSend) {
+		this.fachuSend = fachuSend;
+	}
+
+}

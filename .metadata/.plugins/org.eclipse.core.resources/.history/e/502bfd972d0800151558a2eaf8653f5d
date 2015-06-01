@@ -1,0 +1,8 @@
+package com.msm.model;
+
+/**
+ * 对照品登记
+ */
+public class ReferenceReg {
+
+}

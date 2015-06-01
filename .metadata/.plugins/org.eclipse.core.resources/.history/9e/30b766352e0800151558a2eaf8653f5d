@@ -1,0 +1,104 @@
+package com.msm.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+/**
+ * 对照品登记
+ */
+@Entity
+@Table(name = "t_reference")
+public class ReferenceReg {
+
+	private int referenId; //
+	private String referenNo; //
+	private String referenName; //
+	private String referenSpecs; //
+	private String amount; //
+	private String source; //
+	private String receiver; //
+	private String revceiveDate; //
+	private String checker; //
+	private String checkDate; //
+
+	public int getReferenId() {
+		return referenId;
+	}
+
+	public void setReferenId(int referenId) {
+		this.referenId = referenId;
+	}
+
+	public String getReferenNo() {
+		return referenNo;
+	}
+
+	public void setReferenNo(String referenNo) {
+		this.referenNo = referenNo;
+	}
+
+	public String getReferenName() {
+		return referenName;
+	}
+
+	public void setReferenName(String referenName) {
+		this.referenName = referenName;
+	}
+
+	public String getReferenSpecs() {
+		return referenSpecs;
+	}
+
+	public void setReferenSpecs(String referenSpecs) {
+		this.referenSpecs = referenSpecs;
+	}
+
+	public String getAmount() {
+		return amount;
+	}
+
+	public void setAmount(String amount) {
+		this.amount = amount;
+	}
+
+	public String getSource() {
+		return source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+	}
+
+	public String getReceiver() {
+		return receiver;
+	}
+
+	public void setReceiver(String receiver) {
+		this.receiver = receiver;
+	}
+
+	public String getRevceiveDate() {
+		return revceiveDate;
+	}
+
+	public void setRevceiveDate(String revceiveDate) {
+		this.revceiveDate = revceiveDate;
+	}
+
+	public String getChecker() {
+		return checker;
+	}
+
+	public void setChecker(String checker) {
+		this.checker = checker;
+	}
+
+	public String getCheckDate() {
+		return checkDate;
+	}
+
+	public void setCheckDate(String checkDate) {
+		this.checkDate = checkDate;
+	}
+
+}

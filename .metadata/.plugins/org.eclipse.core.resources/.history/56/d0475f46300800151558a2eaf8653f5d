@@ -1,0 +1,103 @@
+package com.msm.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+/**
+ * 检验结果表
+ */
+@Entity
+@Table(name = "t_checkresult")
+public class SampleCheckResult {
+	private int sampleId; // 检品Id（主键）
+	private String sampleNo; // 检品编号
+	private String sampleName; // 检品名称
+	private String sampleSpecs; // 检品规格
+	private String amount; // 检品数量
+	private String source; // 检品来源
+	private String isChecked; // 是否被检查
+	private String isStandard; // 是否合格
+	private String checker; // 审核人
+	private String checkDate; // 审核日期
+
+	public int getSampleId() {
+		return sampleId;
+	}
+
+	public void setSampleId(int sampleId) {
+		this.sampleId = sampleId;
+	}
+
+	public String getSampleNo() {
+		return sampleNo;
+	}
+
+	public void setSampleNo(String sampleNo) {
+		this.sampleNo = sampleNo;
+	}
+
+	public String getSampleName() {
+		return sampleName;
+	}
+
+	public void setSampleName(String sampleName) {
+		this.sampleName = sampleName;
+	}
+
+	public String getSampleSpecs() {
+		return sampleSpecs;
+	}
+
+	public void setSampleSpecs(String sampleSpecs) {
+		this.sampleSpecs = sampleSpecs;
+	}
+
+	public String getAmount() {
+		return amount;
+	}
+
+	public void setAmount(String amount) {
+		this.amount = amount;
+	}
+
+	public String getSource() {
+		return source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+	}
+
+	public String getIsChecked() {
+		return isChecked;
+	}
+
+	public void setIsChecked(String isChecked) {
+		this.isChecked = isChecked;
+	}
+
+	public String getIsStandard() {
+		return isStandard;
+	}
+
+	public void setIsStandard(String isStandard) {
+		this.isStandard = isStandard;
+	}
+
+	public String getChecker() {
+		return checker;
+	}
+
+	public void setChecker(String checker) {
+		this.checker = checker;
+	}
+
+	public String getCheckDate() {
+		return checkDate;
+	}
+
+	public void setCheckDate(String checkDate) {
+		this.checkDate = checkDate;
+	}
+
+}

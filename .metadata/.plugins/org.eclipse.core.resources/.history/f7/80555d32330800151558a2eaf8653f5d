@@ -1,0 +1,112 @@
+package com.msm.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+/**
+ * 样品标准表
+ */
+@Entity
+@Table(name = "t_standard")
+public class SampleStandard {
+	private int sampleId; // 检品Id（主键）
+	private String sampleNo; // 检品编号
+	private String sampleName; // 检品名称
+	private String samplePurity; // 检品纯度
+	private String sampleComponent;// 检品成分
+	private String sampleEffect; // 检品成效
+	private String toxicity; // 毒副作用
+	private String pyrogenDegrees; // 热原度
+	private String sterility; // 无菌度
+	private String phyProperty; // 物理化学性质
+	private String impurity; // 杂质
+
+	public int getSampleId() {
+		return sampleId;
+	}
+
+	public void setSampleId(int sampleId) {
+		this.sampleId = sampleId;
+	}
+
+	public String getSampleNo() {
+		return sampleNo;
+	}
+
+	public void setSampleNo(String sampleNo) {
+		this.sampleNo = sampleNo;
+	}
+
+	public String getSampleName() {
+		return sampleName;
+	}
+
+	public void setSampleName(String sampleName) {
+		this.sampleName = sampleName;
+	}
+
+	public String getSamplePurity() {
+		return samplePurity;
+	}
+
+	public void setSamplePurity(String samplePurity) {
+		this.samplePurity = samplePurity;
+	}
+
+	public String getSampleComponent() {
+		return sampleComponent;
+	}
+
+	public void setSampleComponent(String sampleComponent) {
+		this.sampleComponent = sampleComponent;
+	}
+
+	public String getSampleEffect() {
+		return sampleEffect;
+	}
+
+	public void setSampleEffect(String sampleEffect) {
+		this.sampleEffect = sampleEffect;
+	}
+
+	public String getToxicity() {
+		return toxicity;
+	}
+
+	public void setToxicity(String toxicity) {
+		this.toxicity = toxicity;
+	}
+
+	public String getPyrogenDegrees() {
+		return pyrogenDegrees;
+	}
+
+	public void setPyrogenDegrees(String pyrogenDegrees) {
+		this.pyrogenDegrees = pyrogenDegrees;
+	}
+
+	public String getSterility() {
+		return sterility;
+	}
+
+	public void setSterility(String sterility) {
+		this.sterility = sterility;
+	}
+
+	public String getPhyProperty() {
+		return phyProperty;
+	}
+
+	public void setPhyProperty(String phyProperty) {
+		this.phyProperty = phyProperty;
+	}
+
+	public String getImpurity() {
+		return impurity;
+	}
+
+	public void setImpurity(String impurity) {
+		this.impurity = impurity;
+	}
+
+}

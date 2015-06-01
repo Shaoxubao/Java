@@ -1,0 +1,22 @@
+package com.msm.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+/**
+ * 检验结果表
+ */
+@Entity
+@Table(name="t_checkresult")
+public class SampleCheckResult {
+	private int sampleId; // 检品Id（主键）
+	private String sampleNo; // 检品编号
+	private String sampleName; // 检品名称
+	private String sampleSpecs; // 检品规格
+	private String amount; // 检品数量
+	private String source; // 检品来源
+	private String isChecked; // 是否被检查
+	private String isStandard; // 是否合格
+	private String checker; // 审核人
+	private String checkDate; // 审核日期
+}

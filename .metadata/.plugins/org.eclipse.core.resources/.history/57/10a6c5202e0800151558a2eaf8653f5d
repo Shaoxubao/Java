@@ -1,0 +1,23 @@
+package com.msm.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+/**
+ * 对照品登记
+ */
+@Entity
+@Table(name="t_reference")
+public class ReferenceReg {
+
+	private int referenId;
+	private String referenNo;
+	private String referenName;
+	private String referenSpecs;
+	private String amount;
+	private String source;
+	private String receiver;
+	private String revceiveDate;
+	private String checker;
+	private String checkDate;
+}

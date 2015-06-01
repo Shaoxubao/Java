@@ -1,0 +1,13 @@
+package com.msm.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+/**
+ * 检验结果表
+ */
+@Entity
+@Table(name="t_checkres")
+public class SampleCheckResult {
+
+}
