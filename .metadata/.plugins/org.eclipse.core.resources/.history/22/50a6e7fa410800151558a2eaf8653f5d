@@ -1,0 +1,5 @@
+package com.msm.service.support.service;
+
+public class SupportService implements ISupportService {
+
+}

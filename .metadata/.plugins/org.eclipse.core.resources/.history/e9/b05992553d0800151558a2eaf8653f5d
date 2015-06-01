@@ -1,0 +1,32 @@
+package com.msm.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+/**
+ * 后勤保障人员管理模块
+ */
+@Controller
+@RequestMapping("/support")
+public class SupportGuaranteeController {
+
+	/**
+	 * 维护管理
+	 */
+
+	/**
+	 * 采购管理
+	 */
+
+	/**
+	 * 规章制度管理
+	 */
+
+	/**
+	 * 输入对照品信息
+	 */
+
+	/**
+	 * 输入标准品信息
+	 */
+}

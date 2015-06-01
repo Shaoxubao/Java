@@ -1,0 +1,8 @@
+package com.msm.controller;
+
+/**
+ * 检验人员管理模块
+ */
+public class CheckerController {
+
+}

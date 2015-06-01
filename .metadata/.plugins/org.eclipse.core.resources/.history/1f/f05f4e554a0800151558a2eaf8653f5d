@@ -1,0 +1,59 @@
+package com.msm.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.msm.model.ReferenceReg;
+import com.msm.service.support.service.ISupportService;
+
+/**
+ * 后勤保障人员管理模块
+ */
+@Controller
+@RequestMapping("/support")
+public class SupportGuaranteeController {
+
+	@Autowired
+	private ISupportService supportService;
+
+	/**
+	 * 输入对照品信息
+	 */
+	@RequestMapping(value="/addref", method=RequestMethod.GET)
+	public String addReference(Model model) {
+		model.addAttribute(new ReferenceReg());
+		return "reference/add_ref";
+	}
+
+	@RequestMapping(value="/addref", method=RequestMethod.POST)
+	public String addReference(@Validated ReferenceReg referencereg, BindingResult br) {
+		if (br.hasErrors()) {
+			return "reference/add_ref";
+		}
+
+		supportService.addReference(referencereg);
+		return "redirect:/reference/list_ref";
+	}
+
+	/**
+	 * 输入标准品信息
+	 */
+
+	/**
+	 * 维护管理
+	 */
+
+	/**
+	 * 采购管理
+	 */
+
+	/**
+	 * 规章制度管理
+	 */
+
+}

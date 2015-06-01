@@ -1,0 +1,19 @@
+package com.msm.service.support.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.msm.model.ReferenceReg;
+
+@Service("supportService")
+public class SupportService implements ISupportService {
+
+	@Autowired
+	private ISupportService supportService;
+
+	@Override
+	public void addReference(ReferenceReg reference) {
+
+	}
+
+}

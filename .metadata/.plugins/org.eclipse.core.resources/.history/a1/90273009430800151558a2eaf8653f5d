@@ -1,0 +1,16 @@
+package com.msm.dao.support.dao;
+
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+import org.springframework.stereotype.Repository;
+
+import com.msm.model.ReferenceReg;
+
+@Repository("supportDao")
+public class SupportDao extends HibernateDaoSupport implements ISupportDao {
+
+	@Override
+	public void add(ReferenceReg reference) {
+
+	}
+
+}

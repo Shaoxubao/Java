@@ -1,0 +1,57 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>检品注册页面</title>
+</head>
+<body>
+    <div align="center">检品注册</div>
+    <sf:form method="post" modelAttribute="referencereg">
+        <table align="center" width="500" border="1">
+            <tr>
+                <td>检品编码:</td><td><sf:input path="referenId" /><sf:errors path="referenId"/></td>
+            </tr>
+            <tr>
+                <td>检品名称：</td><td><sf:input path="referenNo" /><sf:errors path="referenNo"/></td>
+            </tr>
+            <tr>
+                <td>检品种类：</td><td><sf:input path="referenName" /><sf:errors path="referenName"/></td>
+            </tr>
+            <tr>
+                <td>主检科室:</td><td><sf:input path="referenSpecs" /><sf:errors path="referenSpecs"/></td>
+            </tr>
+            <tr>
+                <td>会检科室:</td><td><sf:input path="amount" /><sf:errors path="amount"/></td>
+            </tr>
+            <tr>
+                <td>生产单位:</td><td><sf:input path="source" /><sf:errors path="produce"/></td>
+            </tr>
+            <tr>
+                <td>检品规格:</td><td><sf:input path="receiver" /><sf:errors path="receiver"/></td>
+            </tr>
+            <tr>
+                <td>检品数量:</td><td><sf:input path="revceiveDate" /><sf:errors path="revceiveDate"/></td>
+            </tr>
+            <tr>
+                <td>是否被检:</td><td><sf:input path="checker" /><sf:errors path="checker"/></td>
+            </tr>
+            <tr>
+                <td>是否通过:</td><td><sf:input path="checkDate" /><sf:errors path="checkDate"/></td>
+            </tr>
+
+            <tr>
+              <td colspan="2">
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="submit" name="add" value="检品添加"/>
+                &nbsp;
+                <input type="reset"  name="ret" value="检品重置"/>
+              </td>
+            </tr>
+
+        </table>
+    </sf:form>
+</body>
+</html>

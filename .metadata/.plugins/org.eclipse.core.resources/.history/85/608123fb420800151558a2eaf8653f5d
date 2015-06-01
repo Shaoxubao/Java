@@ -1,0 +1,9 @@
+package com.msm.dao.support.dao;
+
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+import org.springframework.stereotype.Repository;
+
+@Repository("supportDao")
+public class SupportDao extends HibernateDaoSupport implements ISupportDao {
+
+}

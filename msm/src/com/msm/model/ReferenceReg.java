@@ -55,6 +55,7 @@ public class ReferenceReg {
 		this.referenName = referenName;
 	}
 
+	@NotEmpty(message="对照品名称不能为空！")
 	public String getReferenSpecs() {
 		return referenSpecs;
 	}
@@ -63,6 +64,7 @@ public class ReferenceReg {
 		this.referenSpecs = referenSpecs;
 	}
 
+	@NotEmpty(message="对照品名称不能为空！")
 	public String getAmount() {
 		return amount;
 	}
@@ -71,6 +73,7 @@ public class ReferenceReg {
 		this.amount = amount;
 	}
 
+	@NotEmpty(message="对照品名称不能为空！")
 	public String getSource() {
 		return source;
 	}
@@ -79,6 +82,7 @@ public class ReferenceReg {
 		this.source = source;
 	}
 
+	@NotEmpty(message="对照品名称不能为空！")
 	public String getReceiver() {
 		return receiver;
 	}
@@ -87,6 +91,7 @@ public class ReferenceReg {
 		this.receiver = receiver;
 	}
 
+	@NotEmpty(message="对照品名称不能为空！")
 	public String getRevceiveDate() {
 		return revceiveDate;
 	}
@@ -95,6 +100,7 @@ public class ReferenceReg {
 		this.revceiveDate = revceiveDate;
 	}
 
+	@NotEmpty(message="对照品名称不能为空！")
 	public String getChecker() {
 		return checker;
 	}
@@ -103,6 +109,7 @@ public class ReferenceReg {
 		this.checker = checker;
 	}
 
+	@NotEmpty(message="对照品名称不能为空！")
 	public String getCheckDate() {
 		return checkDate;
 	}

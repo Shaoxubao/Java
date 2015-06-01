@@ -21,7 +21,7 @@
           <td colspan="12">目前还没有用户数据</td>
         </tr>
       </c:if>
-      
+
       <c:if test="${pagers.total gt 0 }">
           <c:forEach items="${pagers.datas }" var="s">
             <tr>
@@ -48,7 +48,7 @@
               </td>
             </tr>
         </c:if>
-      
+
     </table>
 
 </body>

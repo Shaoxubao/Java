@@ -1,0 +1,8 @@
+package com.msm.service.support.service;
+
+import com.msm.model.ReferenceReg;
+
+public interface ISupportService {
+
+	public void addReference(ReferenceReg reference); // 对照品信息添加
+}

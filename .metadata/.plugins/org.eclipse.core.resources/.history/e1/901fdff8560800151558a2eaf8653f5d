@@ -1,0 +1,28 @@
+package com.msm.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+/**
+ * 检验人员管理模块
+ */
+@Controller
+@RequestMapping("/check")
+public class CheckerController {
+
+	/**
+	 * 查看检品的基本信息
+	 */
+
+	/**
+	 * 查看检品的相关标准
+	 */
+
+	/**
+	 * 查看有关的对照品信息
+	 */
+
+	/**
+	 * 进行检验记录的提交
+	 */
+}

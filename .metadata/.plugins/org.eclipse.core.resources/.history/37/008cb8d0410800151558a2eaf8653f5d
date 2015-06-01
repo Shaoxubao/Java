@@ -1,0 +1,8 @@
+package com.msm.dao.support.dao;
+
+import org.springframework.stereotype.Repository;
+
+@Repository("supportDao")
+public class SupportDao implements ISupportDao {
+
+}

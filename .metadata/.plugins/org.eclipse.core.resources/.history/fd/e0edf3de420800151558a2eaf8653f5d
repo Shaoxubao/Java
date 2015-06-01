@@ -1,0 +1,5 @@
+package com.msm.dao.support.dao;
+
+public interface ISupportDao {
+
+}

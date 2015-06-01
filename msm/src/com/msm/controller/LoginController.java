@@ -45,9 +45,12 @@ public class LoginController {
             return "user/admin";
         } else if (UserPosition.PRODUCT_CHECK_REG.desc().equals(userPos)) {
             return "sample/regi_main";
+        } else if (UserPosition.LOGISTICS_PERSONNEL.desc().equals(userPos)) {
+        	return "reference/ref_main";
         } else {
              return null;
         }
+
     }
 
     /**
