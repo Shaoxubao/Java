@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>用户列表</title>
 </head>
-<body>
+<body bgcolor="#CCCC99">
   <table width="700" align="center" border="1">
     <tr>
       <td>用户工号</td><td>用户姓名</td><td>用户密码</td>
@@ -39,6 +39,6 @@
       </tr>
     </c:if>
   </table>
-  
+
 </body>
 </html>

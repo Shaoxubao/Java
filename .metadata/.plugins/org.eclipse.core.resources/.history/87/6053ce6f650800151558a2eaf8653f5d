@@ -1,0 +1,35 @@
+package com.msm.dao.checker.dao;
+
+import javax.annotation.Resource;
+
+import org.hibernate.SessionFactory;
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+import org.springframework.stereotype.Repository;
+
+import com.msm.model.Pager;
+import com.msm.model.Sample;
+
+@Repository("checkDao")
+public class CheckDao extends HibernateDaoSupport implements ICheckDao {
+
+	@Resource
+    public void setSuperSessionFactory(SessionFactory sessionFactory) {
+        this.setSessionFactory(sessionFactory);
+    }
+
+	@Override
+	public Pager<Sample> find() {
+		return null;
+	}
+
+	@Override
+	public Sample loadBySampleName(String samplenName) {
+		return null;
+	}
+
+	@Override
+	public Sample loadBySampleNo(String sampleNo) {
+		return null;
+	}
+
+}

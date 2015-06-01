@@ -8,12 +8,12 @@
 .foot {
     bgcolor:＃F1FAFA;
 }
-.foot a  
-{  
+.foot a
+{
    background:#FFBBFF;
    color:#FF0000;
-   font-weight:bolder; 
-} 
+   font-weight:bolder;
+}
 </style>
 </head>
 <body bgcolor="#9999CC">
@@ -22,7 +22,7 @@
    <div class="foot">
         <a>杜绝一切伪劣药品，坚决打击一切造假案行为，共创一个美好世界..........................</a>
    </div>
-      
+
 </body>
 
 </html>

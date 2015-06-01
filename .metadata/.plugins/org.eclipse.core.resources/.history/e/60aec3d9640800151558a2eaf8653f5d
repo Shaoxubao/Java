@@ -1,0 +1,8 @@
+package com.msm.service.checker.service;
+
+import org.springframework.stereotype.Service;
+
+@Service("checkService")
+public class CheckService implements ICheckService {
+
+}

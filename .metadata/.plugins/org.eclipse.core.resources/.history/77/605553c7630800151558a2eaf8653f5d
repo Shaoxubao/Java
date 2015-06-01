@@ -1,0 +1,38 @@
+package com.msm.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+/**
+ * 检品检验人员管理模块
+ */
+@Controller
+@RequestMapping("/check")
+public class CheckerController {
+
+	private ICheckService checkService;
+
+	/**
+	 * 进行检验记录的提交
+	 */
+	@RequestMapping(value="/commit", method=RequestMethod.GET)
+	public String checkCommit(Model model) {
+		model.addAttribute("pagers", );
+		return "check/commit";
+	}
+
+	/**
+	 * 查看检品的基本信息
+	 */
+
+	/**
+	 * 查看检品的相关标准
+	 */
+
+	/**
+	 * 查看有关的对照品信息
+	 */
+
+}

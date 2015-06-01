@@ -1,0 +1,23 @@
+package com.msm.dao.checker.dao;
+
+import com.msm.model.Pager;
+import com.msm.model.Sample;
+
+public class CheckDao implements ICheckDao {
+
+	@Override
+	public Pager<Sample> find() {
+		return null;
+	}
+
+	@Override
+	public Sample loadBySampleName(String samplenName) {
+		return null;
+	}
+
+	@Override
+	public Sample loadBySampleNo(String sampleNo) {
+		return null;
+	}
+
+}

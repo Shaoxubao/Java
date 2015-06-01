@@ -1,0 +1,5 @@
+package com.msm.dao.checker.dao;
+
+public interface ICheckDao {
+
+}

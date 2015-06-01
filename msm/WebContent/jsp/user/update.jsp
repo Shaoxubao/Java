@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>用户更新</title>
 </head>
-<body>
+<body bgcolor="#CCCC99">
   <sf:form method="post" modelAttribute="user">
     <table width="600" align="center" border="1">
        <tr>

@@ -42,11 +42,13 @@ public class LoginController {
         model.addAttribute("loginUser", u);
         String userPos = u.getUserPosition();
         if (UserPosition.ADMIN_MANAGE.desc().equals(userPos)) {
-            return "user/admin";
+            return "user/admin"; // 管理员
         } else if (UserPosition.PRODUCT_CHECK_REG.desc().equals(userPos)) {
-            return "sample/regi_main";
+            return "sample/regi_main"; // 检品注册
         } else if (UserPosition.LOGISTICS_PERSONNEL.desc().equals(userPos)) {
-        	return "reference/ref_main";
+        	return "reference/ref_main"; // 后勤保障
+        } else if (UserPosition.PRODUCT_INSPECT.desc().equals(userPos)) {
+        	return "checker/check_main"; // 打印报告
         } else {
              return null;
         }

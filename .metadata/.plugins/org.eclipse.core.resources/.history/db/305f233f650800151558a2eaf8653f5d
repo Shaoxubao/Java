@@ -1,0 +1,26 @@
+package com.msm.dao.checker.dao;
+
+import com.msm.model.Pager;
+import com.msm.model.Sample;
+
+public class CheckDao implements ICheckDao {
+
+	@Override
+	public Pager<Sample> find() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Sample loadBySampleName(String samplenName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Sample loadBySampleNo(String sampleNo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,9 @@
+package com.msm.service.checker.service;
+
+import com.msm.model.Pager;
+import com.msm.model.Sample;
+
+public interface ICheckService {
+
+	public Pager<Sample> find();
+}

@@ -1,0 +1,5 @@
+package com.msm.service.checker.service;
+
+public interface ICheckService {
+
+}

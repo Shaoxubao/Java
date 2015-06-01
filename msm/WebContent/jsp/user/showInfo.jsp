@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>查询用户个人信息</title>
 </head>
-<body marginheight="30">
+<body marginheight="30" bgcolor="#CCCC99">
   <sf:form method="post" modelAttribute="user">
       <table width="400" align="center" border="1">
           <tr>

@@ -18,10 +18,10 @@ import com.msm.service.sample.service.ISampleService;
 @Controller
 @RequestMapping("/samplem")
 public class SampleRegisteController {
-    
+
     @Autowired
     private ISampleService sampleService;
-    
+
     /*
     @RequestMapping("/addsample")
     public ModelAndView addSample(HttpServletRequest request,
@@ -39,17 +39,17 @@ public class SampleRegisteController {
         sampleInfo.setIsCheckPassed(request.getParameter("ispassed"));
         sampleInfo.setReceiveDate(request.getParameter("revdate"));
         sampleInfo.setConclusionDate(request.getParameter("concludedate"));
-        
+
         System.out.println("-------------------------");
-        
+
         ModelAndView mv =new ModelAndView("sample/add_sample", "command", "");
         mv.addObject("sample", sampleInfo);
         System.out.println(sampleInfo);
         sampleService.addSample(sampleInfo);
-        
+
         return mv;
     }*/
-    
+
     /**
      * 检品注册添加
      */
@@ -58,18 +58,18 @@ public class SampleRegisteController {
         model.addAttribute(new Sample());
         return "sample/add_sample";
     }
-    
+
     @RequestMapping(value="/addsample", method=RequestMethod.POST)
     public String addSample(@Validated Sample sample, BindingResult br) {
         if (br.hasErrors()) {
             return "sample/add_sample";
         }
-        
+
         System.out.println(sample);
         sampleService.addSample(sample);
         return "redirect:/samplem/samples";
     }
-    
+
     /**
      * 所有检品列表
      */
@@ -78,7 +78,7 @@ public class SampleRegisteController {
         model.addAttribute("pagers", sampleService.find());
         return "sample/list_sample";
     }
-    
+
     /**
      * 检品删除
      */
@@ -87,7 +87,7 @@ public class SampleRegisteController {
         model.addAttribute("pagers", sampleService.find());
         return "sample/delete_sample";
     }
-    
+
     @RequestMapping(value="/{sampleNo}/deletesample", method=RequestMethod.GET)
     public String deletesample(@PathVariable String sampleNo) {
         Sample sample = sampleService.loadBySampleNo(sampleNo);
@@ -95,7 +95,7 @@ public class SampleRegisteController {
         System.out.println("SampleId:"+sample.getSampleId());
         return "redirect:/samplem/samples";
     }
-    
+
     /**
      * 更新检品信息
      */
@@ -104,13 +104,13 @@ public class SampleRegisteController {
         model.addAttribute("pagers", sampleService.find());
         return "sample/update_sample_info";
     }
-    
+
     @RequestMapping(value="/{sampleNo}/update", method=RequestMethod.GET)
     public String updateSample(@PathVariable String sampleNo, Model model) {
         model.addAttribute(sampleService.loadBySampleNo(sampleNo));
         return "sample/update_sample";
     }
-    
+
     @RequestMapping(value="/{sampleNo}/update", method=RequestMethod.POST)
     public String updateSample(@PathVariable String sampleNo, @Validated Sample sample,
                                BindingResult br, Model  model) {
@@ -118,7 +118,7 @@ public class SampleRegisteController {
             model.addAttribute(sample);
             return "sample/update_sample";
         }
-        
+
         Sample s = sampleService.loadBySampleNo(sampleNo);
         s.setSampleNo(sample.getSampleNo());
         s.setSampleName(sample.getSampleName());
@@ -133,10 +133,10 @@ public class SampleRegisteController {
         s.setReceiveDate(sample.getReceiveDate());
         s.setConclusionDate(sample.getConclusionDate());
         sampleService.updateSample(s);
-        
+
         return "redirect:/samplem/samples";
     }
-    
+
     /**
      * 查询检品信息
      */
@@ -145,11 +145,11 @@ public class SampleRegisteController {
         model.addAttribute("pagers", sampleService.find());
         return "sample/show_sample";
     }
-    
+
     @RequestMapping(value="/{sampleNo}", method=RequestMethod.GET)
     public String show(@PathVariable String sampleNo, Model model) {
         model.addAttribute(sampleService.loadBySampleNo(sampleNo));
         return "sample/show_sample_info";
     }
-    
+
 }
