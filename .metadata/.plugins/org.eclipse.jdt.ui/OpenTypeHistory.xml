@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<typeInfoHistroy/>
+<typeInfoHistroy>
+<typeInfo handle="=msm/src&lt;com.msm.service.support.service{ISupportService.java[ISupportService" modifiers="513" timestamp="1433151037095"/>
+<typeInfo handle="=msm/src&lt;com.msm.dao.support.dao{ISupportDao.java[ISupportDao" modifiers="513" timestamp="1433151124326"/>
+<typeInfo handle="=msm/src&lt;com.msm.dao.checker.dao{ICheckDao.java[ICheckDao" modifiers="513" timestamp="1433166613738"/>
+</typeInfoHistroy>

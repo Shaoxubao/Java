@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>检品列表</title>
 </head>
-<body>
+<body bgcolor="#CCCC99">
     <div align="center">检品列表</div>
     <table width="1300" align="center" border="1">
       <tr>

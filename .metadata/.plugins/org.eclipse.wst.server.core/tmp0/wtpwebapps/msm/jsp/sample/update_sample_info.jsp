@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>检品更新</title>
 </head>
-<body>
+<body bgcolor="#CCCC99">
     <div align="center">检品更新</div>
     <table width="1300" align="center" border="1">
       <tr>
@@ -21,7 +21,7 @@
           <td colspan="13">目前还没有用户数据</td>
         </tr>
       </c:if>
-      
+
       <c:if test="${pagers.total gt 0 }">
           <c:forEach items="${pagers.datas }" var="s">
             <tr>
@@ -49,7 +49,7 @@
               </td>
             </tr>
         </c:if>
-      
+
     </table>
 </body>
 </html>

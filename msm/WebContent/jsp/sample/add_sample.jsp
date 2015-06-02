@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>检品注册页面</title>
 </head>
-<body>
+<body bgcolor="#CCCC99">
     <div align="center">检品注册</div>
     <sf:form method="post" modelAttribute="sample">
         <table align="center" width="500" border="1">
@@ -47,7 +47,7 @@
             <tr>
                 <td>报告日期:</td><td><sf:input path="conclusionDate" /><sf:errors path="conclusionDate"/></td>
             </tr>
-            
+
             <tr>
               <td colspan="2">
                 &nbsp;&nbsp;&nbsp;&nbsp;
@@ -56,7 +56,7 @@
                 <input type="reset"  name="ret" value="检品重置"/>
               </td>
             </tr>
-   
+
         </table>
     </sf:form>
 </body>

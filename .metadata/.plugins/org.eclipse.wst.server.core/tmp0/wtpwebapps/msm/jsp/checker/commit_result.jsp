@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>检品检验结果提交</title>
 </head>
-<body>
+<body bgcolor="#CCCC99">
     <div align="center">检验结果提交</div>
     <sf:form method="post" modelAttribute="sample">
         <table align="center" width="500" border="1">

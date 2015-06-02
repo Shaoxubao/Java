@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>检品详细信息</title>
 </head>
-<body marginheight="100">
+<body marginheight="100" bgcolor="#CCCC99">
     <h1>检品[${sample.sampleName }]详细信息:</h1>
     <sf:form method="post" modelAttribute="sample">
         <table width="400" align="center" border="1">
