@@ -18,11 +18,11 @@ public enum UserPosition {
 
     SIGNER_MANAGE(7, "受权签字人"),      // 受权签字人
 
-    JIAODUI_MANAGE(8, "校对管理"),       // 校对
+    JIAODUI(8, "校对"),                 // 校对
 
-    FINAL_CHECK(9, "最终检验"),          // 最终检验
+    FINAL_CHECK(9, "最终检验"),         // 最终检验
 
-    REPORT_PRINT(10, "报告打印");        // 报告打印人员
+    REPORT_PRINT(10, "报告打印");       // 报告打印人员
 
     private final int value;
     private final String desc;
