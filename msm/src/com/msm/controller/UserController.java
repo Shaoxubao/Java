@@ -121,7 +121,7 @@ public class UserController {
     public String show(@Validated String staffId, Model model) {
         User user = userService.loadByUserStaffId(staffId);
         if (null == user) {
-            System.out.println("查询验证!!!");
+            //System.out.println("查询验证!!!");
             model.addAttribute(new User());
             return "user/showInfo";
         }

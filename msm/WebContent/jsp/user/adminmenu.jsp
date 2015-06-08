@@ -19,15 +19,16 @@
         <li><a href="<%=request.getContextPath()%>/user/update" target="main">修改用户个人信息</a></li>
         <li><a href="<%=request.getContextPath()%>/user/users" target="main">查看所有用户列表</a></li>
         <li><a href="<%=request.getContextPath()%>/user/show" target="main">查询用户个人信息</a></li>
-        <li><a href="<%=request.getContextPath()%>/user/show" target="main">修改用户个人密码</a></li>
+        <!-- <li><a href="<%=request.getContextPath()%>/user/show" target="main">修改用户个人密码</a></li>-->
       </ul>
+
       <li>药品管理</li>
       <ul>
-        <li>查看所有检品</li>
-        <li>未检查检品列表</li>
-        <li>已检查检品列表</li>
-        <li>已通过检查列表</li>
-        <li>未通过检查列表</li>
+        <li><a href="<%=request.getContextPath()%>/samplem/samples" target="main">查看所有检品</a></li>
+        <li><a href="<%=request.getContextPath()%>/samplem/unchecked" target="main">未检查检品列表</a></li>
+        <li><a href="<%=request.getContextPath()%>/samplem/checked" target="main">已检查检品列表</a></li>
+        <li><a href="<%=request.getContextPath()%>/samplem/checkpassed" target="main">已通过检查列表</a></li>
+        <li><a href="<%=request.getContextPath()%>/samplem/checkunpassed" target="main">未通过检查列表</a></li>
       </ul>
     </ul>
   </div>

@@ -12,6 +12,13 @@ public interface ISampleService {
     public Sample load(int id);
     public List<Sample> list();
     public Pager<Sample> find();
+
     public Sample loadBySampleName(String samplenName);
     public Sample loadBySampleNo(String sampleNo);
+
+    public Pager<Sample> findByCheckConditionsF(String condition);
+    public Pager<Sample> findByCheckConditionsT(String condition);
+
+    public Pager<Sample> findByPassConditionsT(String condition);
+    public Pager<Sample> findByPassConditionsF(String condition);
 }

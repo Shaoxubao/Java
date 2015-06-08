@@ -152,4 +152,43 @@ public class SampleRegisteController {
         return "sample/show_sample_info";
     }
 
+    /**
+     * 管理员对药品管理模块
+     */
+    /**
+     * 未检查药品列表
+     */
+    @RequestMapping(value="/unchecked", method=RequestMethod.GET)
+    public String unchecked(Model model) {
+    	model.addAttribute("pagers", sampleService.findByCheckConditionsF("false"));
+    	return "sample/list_unchecked";
+    }
+
+    /**
+     * 已被检查药品列表
+     */
+    @RequestMapping(value="/checked", method=RequestMethod.GET)
+    public String checked(Model model) {
+    	model.addAttribute("pagers", sampleService.findByCheckConditionsT("true"));
+    	return "sample/list_checked";
+    }
+
+    /**
+     * 已通过检查列表
+     */
+    @RequestMapping(value="/checkpassed", method=RequestMethod.GET)
+    public String checkpassed(Model model) {
+    	model.addAttribute("pagers", sampleService.findByPassConditionsT("true"));
+    	return "sample/list_passed";
+    }
+
+    /**
+     * 未通过检查列表
+     */
+    @RequestMapping(value="/checkunpassed", method=RequestMethod.GET)
+    public String checkunpassed(Model model) {
+    	model.addAttribute("pagers", sampleService.findByPassConditionsF("false"));
+    	return "sample/list_unpassed";
+    }
+
 }

@@ -11,7 +11,7 @@ import com.msm.model.Sample;
 
 @Service("sampleService")
 public class SampleService implements ISampleService {
-    
+
     @Autowired
     private ISampleDao sampleDao;
 
@@ -54,5 +54,25 @@ public class SampleService implements ISampleService {
     public Sample loadBySampleNo(String sampleNo) {
         return sampleDao.loadBySampleNo(sampleNo);
     }
+
+	@Override
+	public Pager<Sample> findByCheckConditionsF(String condition) {
+		return sampleDao.findByCheckConditionsF(condition);
+	}
+
+	@Override
+	public Pager<Sample> findByCheckConditionsT(String condition) {
+		return sampleDao.findByCheckConditionsT(condition);
+	}
+
+	@Override
+	public Pager<Sample> findByPassConditionsT(String condition) {
+		return sampleDao.findByPassConditionsT(condition);
+	}
+
+	@Override
+	public Pager<Sample> findByPassConditionsF(String condition) {
+		return sampleDao.findByPassConditionsF(condition);
+	}
 
 }

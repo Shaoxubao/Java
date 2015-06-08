@@ -104,4 +104,96 @@ public class SampleDao extends HibernateDaoSupport implements ISampleDao {
                             .uniqueResult();
     }
 
+    /**
+     * 检品未被检查
+     */
+	@SuppressWarnings("unchecked")
+	@Override
+	public Pager<Sample> findByCheckConditionsF(String condition) {
+		int size = SystemContext.getSize();
+        int offset = SystemContext.getOffset();
+
+        Query query = this.getSession().createQuery("from Sample where isChecked=?").setParameter(0, condition);
+        query.setFirstResult(offset).setMaxResults(size);
+        List<Sample> datas = query.list();
+
+        Pager<Sample> ps = new Pager<Sample>();
+        ps.setDatas(datas);
+        ps.setOffset(offset);
+        ps.setSize(size);
+        long total = (long) this.getSession().createQuery("select count(*) from Sample where isChecked=?").setParameter(0, condition).uniqueResult();
+        ps.setTotal(total);
+
+		return ps;
+	}
+
+	/**
+     * 检品已被检查
+     */
+	@SuppressWarnings("unchecked")
+	@Override
+	public Pager<Sample> findByCheckConditionsT(String condition) {
+		int size = SystemContext.getSize();
+        int offset = SystemContext.getOffset();
+
+        Query query = this.getSession().createQuery("from Sample where isChecked=?").setParameter(0, condition);
+        query.setFirstResult(offset).setMaxResults(size);
+        List<Sample> datas = query.list();
+
+        Pager<Sample> ps = new Pager<Sample>();
+        ps.setDatas(datas);
+        ps.setOffset(offset);
+        ps.setSize(size);
+        long total = (long) this.getSession().createQuery("select count(*) from Sample where isChecked=?").setParameter(0, condition).uniqueResult();
+        ps.setTotal(total);
+
+		return ps;
+	}
+
+	/**
+	 * 已通过检查列表
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public Pager<Sample> findByPassConditionsT(String condition) {
+		int size = SystemContext.getSize();
+        int offset = SystemContext.getOffset();
+
+        Query query = this.getSession().createQuery("from Sample where isCheckPassed=?").setParameter(0, condition);
+        query.setFirstResult(offset).setMaxResults(size);
+        List<Sample> datas = query.list();
+
+        Pager<Sample> ps = new Pager<Sample>();
+        ps.setDatas(datas);
+        ps.setOffset(offset);
+        ps.setSize(size);
+        long total = (long) this.getSession().createQuery("select count(*) from Sample where isCheckPassed=?").setParameter(0, condition).uniqueResult();
+        ps.setTotal(total);
+
+		return ps;
+	}
+
+	/**
+	 * 未通过检查列表
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public Pager<Sample> findByPassConditionsF(String condition) {
+		int size = SystemContext.getSize();
+        int offset = SystemContext.getOffset();
+
+        Query query = this.getSession().createQuery("from Sample where isCheckPassed=?").setParameter(0, condition);
+        query.setFirstResult(offset).setMaxResults(size);
+        List<Sample> datas = query.list();
+
+        Pager<Sample> ps = new Pager<Sample>();
+        ps.setDatas(datas);
+        ps.setOffset(offset);
+        ps.setSize(size);
+        long total = (long) this.getSession().createQuery("select count(*) from Sample where isCheckPassed=?").setParameter(0, condition).uniqueResult();
+        ps.setTotal(total);
+
+		return ps;
+	}
+
 }
