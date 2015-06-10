@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.msm.dao.sample.dao.ISampleDao;
 import com.msm.model.Pager;
 import com.msm.model.Sample;
+import com.msm.model.SampleFlow;
 
 @Service("sampleService")
 public class SampleService implements ISampleService {
@@ -73,6 +74,26 @@ public class SampleService implements ISampleService {
 	@Override
 	public Pager<Sample> findByPassConditionsF(String condition) {
 		return sampleDao.findByPassConditionsF(condition);
+	}
+
+	@Override
+	public Pager<SampleFlow> findSampleFlow() {
+		return sampleDao.findSampleFlow();
+	}
+
+	@Override
+	public void addsampleflow(SampleFlow sampleFlow) {
+		sampleDao.addsampleflow(sampleFlow);
+	}
+
+	@Override
+	public SampleFlow loadBySampleFlowNo(String sampleNo) {
+		return sampleDao.loadBySampleFlowNo(sampleNo);
+	}
+
+	@Override
+	public void updateSampleFlow(SampleFlow sampleFlow) {
+		sampleDao.updateSampleFlow(sampleFlow);
 	}
 
 }

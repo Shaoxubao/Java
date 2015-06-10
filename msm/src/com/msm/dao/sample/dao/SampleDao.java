@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 
 import com.msm.model.Pager;
 import com.msm.model.Sample;
+import com.msm.model.SampleFlow;
 import com.msm.util.SystemContext;
 
 @Repository("sampleDao")
@@ -194,6 +195,54 @@ public class SampleDao extends HibernateDaoSupport implements ISampleDao {
         ps.setTotal(total);
 
 		return ps;
+	}
+
+	/**
+	 * 检品检验流程
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public Pager<SampleFlow> findSampleFlow() {
+		int size = SystemContext.getSize();
+        int offset = SystemContext.getOffset();
+
+        Query query = this.getSession().createQuery("from SampleFlow");
+        query.setFirstResult(offset).setMaxResults(size);
+        List<SampleFlow> datas = query.list();
+
+        Pager<SampleFlow> ps = new Pager<SampleFlow>();
+        ps.setDatas(datas);
+        ps.setOffset(offset);
+        ps.setSize(size);
+        long total = (long) this.getSession().createQuery("select count(*) from SampleFlow").uniqueResult();
+        ps.setTotal(total);
+
+		return ps;
+	}
+
+	@Override
+	public void addsampleflow(SampleFlow sampleFlow) {
+		this.getHibernateTemplate().save(sampleFlow);
+	}
+
+	@Override
+	public SampleFlow loadBySampleFlowNo(String sampleNo) {
+		return (SampleFlow) this.getSession().createQuery("from SampleFlow where sampleNo=?").setParameter(0, sampleNo)
+                .uniqueResult();
+	}
+
+	@Override
+	public void updateSampleFlow(SampleFlow sampleFlow) {
+		 Transaction ts = (Transaction) this.getSession().beginTransaction();
+	        try {
+	            this.getHibernateTemplate().update(sampleFlow);
+	            ts.commit();
+	        } catch (Exception e) {
+	            System.out.println(e);
+	            try {
+	                ts.rollback();
+	            } catch (Exception e2) {}
+	        }
 	}
 
 }

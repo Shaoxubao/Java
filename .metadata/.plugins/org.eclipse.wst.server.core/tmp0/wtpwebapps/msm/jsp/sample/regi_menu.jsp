@@ -12,12 +12,14 @@
       <ul>
         <li>药品管理</li>
         <ul>
-           <!-- <li><a href="add_sample.jsp" target="main">检品注册</a></li>--> 
+           <!-- <li><a href="add_sample.jsp" target="main">检品注册</a></li>-->
           <li><a href="<%=request.getContextPath()%>/samplem/addsample" target="main">检品注册</a></li>
           <li><a href="<%=request.getContextPath()%>/samplem/deletesample" target="main">检品删除</a></li>
           <li><a href="<%=request.getContextPath()%>/samplem/update" target="main">修改检品信息</a></li>
           <li><a href="<%=request.getContextPath()%>/samplem/samples" target="main">查看检品列表</a></li>
           <li><a href="<%=request.getContextPath()%>/samplem/show" target="main">查询检品信息</a></li>
+          <li><a href="<%=request.getContextPath()%>/samplem/sampleflow" target="main">检品检验流程表查看</a></li>
+          <li><a href="<%=request.getContextPath()%>/samplem/addsampleflow" target="main">检验流程表检品注册</a></li>
         </ul>
       </ul>
     </div>

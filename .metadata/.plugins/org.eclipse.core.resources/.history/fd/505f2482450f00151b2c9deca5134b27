@@ -1,0 +1,208 @@
+package com.msm.dao.sample.dao;
+
+import java.util.List;
+
+import javax.annotation.Resource;
+
+import org.hibernate.Query;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+import org.springframework.stereotype.Repository;
+
+import com.msm.model.Pager;
+import com.msm.model.Sample;
+import com.msm.model.SampleFlow;
+import com.msm.util.SystemContext;
+
+@Repository("sampleDao")
+public class SampleDao extends HibernateDaoSupport implements ISampleDao {
+
+    @Resource
+    public void setSuperSessionFactory(SessionFactory sessionFactory) {
+        this.setSessionFactory(sessionFactory);
+    }
+
+    @Override
+    public void addSample(Sample sample) {
+        this.getHibernateTemplate().save(sample);
+    }
+
+    @Override
+    public void updateSample(Sample sample) {
+        Transaction ts = (Transaction) this.getSession().beginTransaction();
+        try {
+            this.getHibernateTemplate().update(sample);
+            ts.commit();
+        } catch (Exception e) {
+            System.out.println(e);
+            try {
+                ts.rollback();
+            } catch (Exception e2) {}
+        }
+    }
+
+    @Override
+    public void deleteSample(int id) {
+        Sample sample = this.load(id);
+        //System.out.println("dao..........:" + sample);
+        //this.getHibernateTemplate().delete(sample);
+
+        Transaction ts = (Transaction) this.getSession().beginTransaction();
+        try {
+            this.getHibernateTemplate().delete(sample);
+            ts.commit();
+        } catch (Exception e) {
+            System.out.println(e);
+            try {
+                ts.rollback();
+            } catch (Exception e2) {}
+        }
+    }
+
+    @Override
+    public Sample load(int id) {
+        return this.getHibernateTemplate().load(Sample.class, id);
+    }
+
+    @SuppressWarnings("unchecked")
+    @Override
+    public List<Sample> list() {
+        return this.getSession().createQuery("from Sample").list();
+    }
+
+    @SuppressWarnings("unchecked")
+    @Override
+    public Pager<Sample> find() {
+
+        int size = SystemContext.getSize();
+        int offset = SystemContext.getOffset();
+
+        Query query = this.getSession().createQuery("from Sample");
+        query.setFirstResult(offset).setMaxResults(size);
+        List<Sample> datas = query.list();
+
+        Pager<Sample> ps = new Pager<Sample>();
+        ps.setDatas(datas);
+        ps.setOffset(offset);
+        ps.setSize(size);
+        long total = (long) this.getSession().createQuery("select count(*) from Sample").uniqueResult();
+        ps.setTotal(total);
+        //System.out.println("total" + total);
+
+        return ps;
+    }
+
+    @Override
+    public Sample loadBySampleName(String samplenName) {
+        return (Sample) this.getSession().createQuery("from Sample where samplenName=?").setParameter(0, samplenName)
+                            .uniqueResult();
+    }
+
+    @Override
+    public Sample loadBySampleNo(String sampleNo) {
+        return (Sample) this.getSession().createQuery("from Sample where sampleNo=?").setParameter(0, sampleNo)
+                            .uniqueResult();
+    }
+
+    /**
+     * 检品未被检查
+     */
+	@SuppressWarnings("unchecked")
+	@Override
+	public Pager<Sample> findByCheckConditionsF(String condition) {
+		int size = SystemContext.getSize();
+        int offset = SystemContext.getOffset();
+
+        Query query = this.getSession().createQuery("from Sample where isChecked=?").setParameter(0, condition);
+        query.setFirstResult(offset).setMaxResults(size);
+        List<Sample> datas = query.list();
+
+        Pager<Sample> ps = new Pager<Sample>();
+        ps.setDatas(datas);
+        ps.setOffset(offset);
+        ps.setSize(size);
+        long total = (long) this.getSession().createQuery("select count(*) from Sample where isChecked=?").setParameter(0, condition).uniqueResult();
+        ps.setTotal(total);
+
+		return ps;
+	}
+
+	/**
+     * 检品已被检查
+     */
+	@SuppressWarnings("unchecked")
+	@Override
+	public Pager<Sample> findByCheckConditionsT(String condition) {
+		int size = SystemContext.getSize();
+        int offset = SystemContext.getOffset();
+
+        Query query = this.getSession().createQuery("from Sample where isChecked=?").setParameter(0, condition);
+        query.setFirstResult(offset).setMaxResults(size);
+        List<Sample> datas = query.list();
+
+        Pager<Sample> ps = new Pager<Sample>();
+        ps.setDatas(datas);
+        ps.setOffset(offset);
+        ps.setSize(size);
+        long total = (long) this.getSession().createQuery("select count(*) from Sample where isChecked=?").setParameter(0, condition).uniqueResult();
+        ps.setTotal(total);
+
+		return ps;
+	}
+
+	/**
+	 * 已通过检查列表
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public Pager<Sample> findByPassConditionsT(String condition) {
+		int size = SystemContext.getSize();
+        int offset = SystemContext.getOffset();
+
+        Query query = this.getSession().createQuery("from Sample where isCheckPassed=?").setParameter(0, condition);
+        query.setFirstResult(offset).setMaxResults(size);
+        List<Sample> datas = query.list();
+
+        Pager<Sample> ps = new Pager<Sample>();
+        ps.setDatas(datas);
+        ps.setOffset(offset);
+        ps.setSize(size);
+        long total = (long) this.getSession().createQuery("select count(*) from Sample where isCheckPassed=?").setParameter(0, condition).uniqueResult();
+        ps.setTotal(total);
+
+		return ps;
+	}
+
+	/**
+	 * 未通过检查列表
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public Pager<Sample> findByPassConditionsF(String condition) {
+		int size = SystemContext.getSize();
+        int offset = SystemContext.getOffset();
+
+        Query query = this.getSession().createQuery("from Sample where isCheckPassed=?").setParameter(0, condition);
+        query.setFirstResult(offset).setMaxResults(size);
+        List<Sample> datas = query.list();
+
+        Pager<Sample> ps = new Pager<Sample>();
+        ps.setDatas(datas);
+        ps.setOffset(offset);
+        ps.setSize(size);
+        long total = (long) this.getSession().createQuery("select count(*) from Sample where isCheckPassed=?").setParameter(0, condition).uniqueResult();
+        ps.setTotal(total);
+
+		return ps;
+	}
+
+	/**
+	 * 检品检验流程
+	 */
+	@Override
+	public Pager<SampleFlow> findSampleFlow() {
+		return null;
+	}
+
+}

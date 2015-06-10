@@ -22,13 +22,17 @@
         <!-- <li><a href="<%=request.getContextPath()%>/user/show" target="main">修改用户个人密码</a></li>-->
       </ul>
 
-      <li>药品管理</li>
+      <li>检品管理</li>
       <ul>
         <li><a href="<%=request.getContextPath()%>/samplem/samples" target="main">查看所有检品</a></li>
         <li><a href="<%=request.getContextPath()%>/samplem/unchecked" target="main">未检查检品列表</a></li>
         <li><a href="<%=request.getContextPath()%>/samplem/checked" target="main">已检查检品列表</a></li>
         <li><a href="<%=request.getContextPath()%>/samplem/checkpassed" target="main">已通过检查列表</a></li>
         <li><a href="<%=request.getContextPath()%>/samplem/checkunpassed" target="main">未通过检查列表</a></li>
+      </ul>
+      <li>检验流程</li>
+      <ul>
+      	<li><a href="<%=request.getContextPath()%>/samplem/sampleflow" target="main">检品检验流程查看</a></li>
       </ul>
     </ul>
   </div>

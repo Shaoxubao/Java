@@ -16,6 +16,8 @@
           <li><a href="<%=request.getContextPath()%>/samplem/deletesample" target="main">检品标准</a></li>
           <li><a href="<%=request.getContextPath()%>/support/refs" target="main">对照品信息</a></li>
           <li><a href="<%=request.getContextPath()%>/check/commit" target="main">检验记录提交</a></li>
+          <li><a href="<%=request.getContextPath()%>/samplem/sampleflow" target="main">检验流程查看</a></li>
+          <li><a href="<%=request.getContextPath()%>/check/sampleflowcommit" target="main">检验流程提交</a></li>
         </ul>
       </ul>
     </div>

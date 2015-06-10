@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.msm.model.Sample;
+import com.msm.model.SampleFlow;
 import com.msm.service.checker.service.ICheckService;
+import com.msm.service.sample.service.ISampleService;
 
 /**
  * 检品检验人员管理模块
@@ -21,6 +23,9 @@ public class CheckerController {
 
 	@Autowired
 	private ICheckService checkService;
+
+	@Autowired
+    private ISampleService sampleService;
 
 	/**
 	 * 进行检验记录的提交
@@ -60,6 +65,52 @@ public class CheckerController {
         checkService.updateSample(s);
 
 		return "redirect:/samplem/samples";
+	}
+
+	/**
+	 * 检验流程提交
+	 */
+	@RequestMapping(value="/sampleflowcommit", method=RequestMethod.GET)
+	public String sampleflowcommit(Model model) {
+		model.addAttribute("pagers", sampleService.findSampleFlow());
+		return "checker/list_sampleflow";
+	}
+
+	@RequestMapping(value="/{sampleNo}/sampleflowcommit", method=RequestMethod.GET)
+	public String sampleflowcommit(@PathVariable String sampleNo, Model model) {
+				model.addAttribute(sampleService.loadBySampleFlowNo(sampleNo));
+		return "checker/sampleflow_result";
+	}
+
+	@RequestMapping(value="/{sampleNo}/sampleflowcommit", method=RequestMethod.POST)
+	public String sampleflowcommit(@PathVariable String sampleNo, @Validated SampleFlow sampleFlow, BindingResult br, Model  model) {
+		if (br.hasErrors()) {
+			model.addAttribute(sampleFlow);
+			return "checker/sampleflow_result";
+		}
+
+		SampleFlow s = sampleService.loadBySampleFlowNo(sampleNo);
+		s.setSampleNo(sampleFlow.getSampleNo());
+		s.setSampleName(sampleFlow.getSampleName());
+		s.setMianRev(sampleFlow.getMianRev());
+		s.setMianSend(sampleFlow.getMianSend());
+		s.setSecondRev(sampleFlow.getSecondRev());
+		s.setSecondSend(sampleFlow.getSecondSend());
+		s.setZhurenRev(sampleFlow.getZhurenRev());
+		s.setZhurenSend(sampleFlow.getZhurenSend());
+		s.setYwssqRev(sampleFlow.getYwssqRev());
+		s.setYwssqSend(sampleFlow.getYwssqSend());
+		s.setHeadRev(sampleFlow.getHeadRev());
+		s.setHeadSend(sampleFlow.getHeadSend());
+		s.setJiaoduiRev(sampleFlow.getJiaoduiRev());
+		s.setJiaoduiSend(sampleFlow.getJiaoduiSend());
+		s.setFachuRev(sampleFlow.getFachuRev());
+		s.setFachuSend(sampleFlow.getFachuSend());
+		s.setPrintRev(sampleFlow.getPrintRev());
+		s.setPrintSend(sampleFlow.getPrintSend());
+		sampleService.updateSampleFlow(s);
+
+		return "redirect:/samplem/sampleflow";
 	}
 
 	/**

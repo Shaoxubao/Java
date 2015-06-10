@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.msm.model.Sample;
+import com.msm.model.SampleFlow;
 import com.msm.service.sample.service.ISampleService;
 
 /**
@@ -189,6 +190,33 @@ public class SampleRegisteController {
     public String checkunpassed(Model model) {
     	model.addAttribute("pagers", sampleService.findByPassConditionsF("false"));
     	return "sample/list_unpassed";
+    }
+
+    /**
+     * 检品检验流程查看
+     */
+    @RequestMapping(value="/sampleflow", method=RequestMethod.GET)
+    public String sampleflow(Model model) {
+    	model.addAttribute("pagers", sampleService.findSampleFlow());
+    	return "sample/list_sampleflow";
+    }
+
+    /**
+     * 检验流程表检品注册
+     */
+    @RequestMapping(value="/addsampleflow", method=RequestMethod.GET)
+    public String addsampleflow(Model model) {
+    	model.addAttribute(new SampleFlow());
+    	return "sample/add_sampleflow";
+    }
+
+    @RequestMapping(value="/addsampleflow", method=RequestMethod.POST)
+    public String addsampleflow(@Validated SampleFlow sampleFlow, BindingResult br) {
+    	if (br.hasErrors()) {
+    		return "sample/add_sampleflow";
+    	}
+    	sampleService.addsampleflow(sampleFlow);
+    	return "redirect:/samplem/sampleflow";
     }
 
 }
