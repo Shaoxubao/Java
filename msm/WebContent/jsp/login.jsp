@@ -19,28 +19,33 @@
             <div id="login_form">
               <form method="post">
                   <div>
-                                                             用户名:<input type="text" name="username" class="username" id="name" /><br/>
+                                             用户名:<input type="text" name="username" class="username" id="name" /><br/>
                   </div>
                   <div>
-                                                            密&nbsp;&nbsp;&nbsp;&nbsp;码:<input type="password" name="password" class="pwd" id="pwd"/><br/>
+                                             密&nbsp;&nbsp;&nbsp;&nbsp;码:<input type="password" name="password" class="pwd" id="pwd"/><br/>
                   </div>
                   <br>
                   <div id="pos_area">
                                                                   身&nbsp;&nbsp;&nbsp;&nbsp;份:
                       <select style="width: 210px">
                           <option>管理员</option>
-                          <option>检品登记人员</option>
-                          <option>检品检验人员</option>
-                          <option>质保科管理人员</option>
-                          <option>后勤保障人员</option>
-                          <option>报告打印人员</option>
+                          <option>检品登记</option>
+                          <option>检品检验</option>
+                          <option>质保科管理</option>
+                          <option>后勤保障</option>
+                          <option>科室主任</option>
+                          <option>业务管理</option>
+                          <option>受权签字人</option>
+                          <option>校对管理</option>
+                          <option>最终检验</option>
+                          <option>报告打印</option>
                       </select>
                   </div>
-                  
+
                   <div id="btn_area">
                      <input type="submit" class="login_btn" id="login_sub"  value="登  录">
                      <input type="reset" class="login_btn" id="login_ret" value="重 置">
-                  </div>        
+                  </div>
               </form>
             </div>
         </div>
@@ -59,8 +64,8 @@
                   <a href="" target="_blank">金象导航</a>
               </p>
               <p>版权所有：北京金象大药房医药连锁有限责任公司&nbsp;北京金象在线网络科技有限公司</p>
-            <p>Copyright? 制药厂 2014-2015， All Rights Reserved</p>
+            <p>Copyright? 制药厂 2015-2016， All Rights Reserved</p>
           </div>
-   </div>  
+   </div>
 </body>
 </html>

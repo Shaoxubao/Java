@@ -25,8 +25,8 @@ public class SampleFlow {
 	private String zhurenSend;  // 科室主任审校发出日期
 	private String ywssqRev;    // 业务管理室审签收到日期
 	private String ywssqSend;   // 业务管理室审签发出日期
-	private String headRev;     // 受权签字人审签收到日期
-	private String headSend;    // 受权签字人审签发出日期
+	private String headRev;     // 受权签字人审签收到日期(审查签字室)
+	private String headSend;    // 受权签字人审签发出日期(审查签字室)
 	private String printRev;    // 打印收到日期
 	private String printSend;   // 打印发出日期
 	private String jiaoduiRev;  // 校对收到日期

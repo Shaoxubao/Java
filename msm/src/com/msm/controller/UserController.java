@@ -47,7 +47,7 @@ public class UserController {
         }
         System.out.println(user);
         userService.add(user);
-            return "redirect:/user/users";
+            return "redirect:/user/users"; // 防止重复提交数据，可以使用重定向视图
     }
 
     /**

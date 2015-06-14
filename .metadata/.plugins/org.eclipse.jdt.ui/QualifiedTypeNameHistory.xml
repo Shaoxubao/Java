@@ -5,7 +5,6 @@
 <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
 <fullyQualifiedTypeName name="com.msm.dao.support.dao.ISupportDao"/>
 <fullyQualifiedTypeName name="com.msm.service.support.service.ISupportService"/>
-<fullyQualifiedTypeName name="javassist.expr.NewArray"/>
 <fullyQualifiedTypeName name="org.springframework.validation.BindingResult"/>
 <fullyQualifiedTypeName name="antlr.collections.List"/>
 <fullyQualifiedTypeName name="java.util.List"/>
@@ -18,8 +17,10 @@
 <fullyQualifiedTypeName name="com.msm.service.checker.service.ICheckService"/>
 <fullyQualifiedTypeName name="org.springframework.validation.annotation.Validated"/>
 <fullyQualifiedTypeName name="com.msm.model.Sample"/>
+<fullyQualifiedTypeName name="javassist.expr.NewArray"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
-<fullyQualifiedTypeName name="org.springframework.ui.Model"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMethod"/>
+<fullyQualifiedTypeName name="org.springframework.ui.Model"/>
+<fullyQualifiedTypeName name="com.msm.model.SampleFlow"/>
 </qualifiedTypeNameHistroy>

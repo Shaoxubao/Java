@@ -32,6 +32,7 @@ public class SupportGuaranteeController {
 
 	/**
 	 * 输入对照品信息
+	 * Model构造url的要获取的参数值
 	 */
 	@RequestMapping(value="/addref", method=RequestMethod.GET)
 	public String addReference(Model model) {
@@ -42,12 +43,10 @@ public class SupportGuaranteeController {
 	@RequestMapping(value="/addref", method=RequestMethod.POST)
 	public String addReference(@Validated ReferenceReg referencereg, BindingResult br) {
 		if (br.hasErrors()) {
-			System.out.println("aaaaaaaaaaaaaaaaaaaaaaa");
 			return "reference/add_ref";
 		}
 
 		supportService.addReference(referencereg);
-		System.out.println("aaaaaaaaaaaaaaaaaaaaaaa");
 		return "redirect:/support/refs";
 	}
 
@@ -66,5 +65,9 @@ public class SupportGuaranteeController {
 	/**
 	 * 规章制度管理
 	 */
+	 @RequestMapping(value="/rules", method=RequestMethod.GET)
+	 public String rules() {
+		 return "rule/rules";
+	 }
 
 }

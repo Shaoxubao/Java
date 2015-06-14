@@ -14,7 +14,7 @@ public enum UserPosition {
 
     KESHI_ZHUREN(5, "科室主任"),         // 科室主任
 
-    YEWU_MANAGE(6, "业务管理室"),        // 业务管理室
+    YEWU_MANAGE(6, "业务管理"),        // 业务管理
 
     SIGNER_MANAGE(7, "受权签字人"),      // 受权签字人
 

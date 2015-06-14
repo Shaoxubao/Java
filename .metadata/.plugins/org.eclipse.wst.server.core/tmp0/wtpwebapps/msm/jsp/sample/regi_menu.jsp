@@ -5,22 +5,45 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>检品注册人员</title>
+
+<script type="text/javascript" src="../../js/jquery.min.js"></script>
+<link href="../../css/style.css" rel="stylesheet" type="text/css" />
+
 </head>
 <body bgcolor="＃E8E8FF">
-    <h1>检品注册人员在线...</h1>
-    <div>
-      <ul>
-        <li>药品管理</li>
-        <ul>
-           <!-- <li><a href="add_sample.jsp" target="main">检品注册</a></li>-->
-          <li><a href="<%=request.getContextPath()%>/samplem/addsample" target="main">检品注册</a></li>
-          <li><a href="<%=request.getContextPath()%>/samplem/deletesample" target="main">检品删除</a></li>
-          <li><a href="<%=request.getContextPath()%>/samplem/update" target="main">修改检品信息</a></li>
-          <li><a href="<%=request.getContextPath()%>/samplem/samples" target="main">查看检品列表</a></li>
-          <li><a href="<%=request.getContextPath()%>/samplem/show" target="main">查询检品信息</a></li>
-          <li><a href="<%=request.getContextPath()%>/samplem/sampleflow" target="main">检品检验流程表查看</a></li>
-          <li><a href="<%=request.getContextPath()%>/samplem/addsampleflow" target="main">检验流程表检品注册</a></li>
-        </ul>
+
+	<script type="text/javascript">
+	$(function () {
+		$(".ny_zblb1 ul li").click(function(){
+			var thisSpan=$(this);
+			$(".ny_zblb1 ul li ul").prev("a").removeClass("cur");
+			$("ul", this).prev("a").addClass("cur");
+			$(this).children("ul").slideDown("fast");
+			$(this).siblings().children("ul").slideUp("fast");
+		})
+	});
+	</script>
+
+    <div class="ny_zbbt"><span>检品注册人员在线</span></div>
+    <div class="ny_zblb1">
+      <ul class="clearfix">
+        <li>
+        	<a class="cur" href="javascript:void(0)">药品管理</a>
+	        <ul style="display:block;">
+	          <li><a href="<%=request.getContextPath()%>/samplem/addsample" target="main">检品注册</a></li>
+	          <li><a href="<%=request.getContextPath()%>/samplem/deletesample" target="main">检品删除</a></li>
+	          <li><a href="<%=request.getContextPath()%>/samplem/update" target="main">修改检品信息</a></li>
+	          <li><a href="<%=request.getContextPath()%>/samplem/samples" target="main">查看检品列表</a></li>
+	          <li><a href="<%=request.getContextPath()%>/samplem/show" target="main">查询检品信息</a></li>
+	        </ul>
+		</li>
+        <li>
+			<a class="cur" href="javascript:void(0)">药品管理</a>
+	        <ul style="display:block;">
+	        	<li><a href="<%=request.getContextPath()%>/samplem/sampleflow" target="main">检品检验流程表查看</a></li>
+	            <li><a href="<%=request.getContextPath()%>/samplem/addsampleflow" target="main">检验流程表检品注册</a></li>
+	        </ul>
+        </li>
       </ul>
     </div>
 </body>
