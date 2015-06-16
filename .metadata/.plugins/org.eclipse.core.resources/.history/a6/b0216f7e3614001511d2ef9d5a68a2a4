@@ -1,0 +1,98 @@
+package com.msm.dao.checker.dao;
+
+import java.util.List;
+
+import javax.annotation.Resource;
+
+import org.hibernate.Query;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+import org.springframework.stereotype.Repository;
+
+import com.msm.model.Pager;
+import com.msm.model.ReportResult;
+import com.msm.model.Sample;
+import com.msm.util.SystemContext;
+
+@Repository("checkDao")
+public class CheckDao extends HibernateDaoSupport implements ICheckDao {
+
+	@Resource
+	public void setSuperSessionFactory(SessionFactory sessionFactory) {
+		this.setSessionFactory(sessionFactory);
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public Pager<Sample> find() {
+		int size = SystemContext.getSize();
+		int offset = SystemContext.getOffset();
+
+		Query query = this.getSession().createQuery("from Sample");
+		query.setFirstResult(offset).setMaxResults(size);
+		List<Sample> datas = query.list();
+
+		Pager<Sample> ps = new Pager<Sample>();
+		ps.setDatas(datas);
+		ps.setOffset(offset);
+		ps.setSize(size);
+		long total = (long) this.getSession()
+				.createQuery("select count(*) from Sample").uniqueResult();
+		ps.setTotal(total);
+		// System.out.println("total" + total);
+
+		return ps;
+	}
+
+	@Override
+	public Sample loadBySampleName(String samplenName) {
+		return (Sample) this.getSession()
+				.createQuery("from Sample where samplenName=?")
+				.setParameter(0, samplenName).uniqueResult();
+	}
+
+	@Override
+	public Sample loadBySampleNo(String sampleNo) {
+		return (Sample) this.getSession()
+				.createQuery("from Sample where sampleNo=?")
+				.setParameter(0, sampleNo).uniqueResult();
+	}
+
+	@Override
+	public void updateSample(Sample sample) {
+		Transaction ts = (Transaction) this.getSession().beginTransaction();
+		try {
+			this.getHibernateTemplate().update(sample);
+			ts.commit();
+		} catch (Exception e) {
+			System.out.println(e);
+			try {
+				ts.rollback();
+			} catch (Exception e2) {
+			}
+		}
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public Pager<ReportResult> findReport() {
+		int size = SystemContext.getSize();
+		int offset = SystemContext.getOffset();
+
+		Query query = this.getSession().createQuery("from ReportResult");
+		query.setFirstResult(offset).setMaxResults(size);
+		List<ReportResult> datas = query.list();
+
+		Pager<ReportResult> ps = new Pager<ReportResult>();
+		ps.setDatas(datas);
+		ps.setOffset(offset);
+		ps.setSize(size);
+		long total = (long) this.getSession()
+				.createQuery("select count(*) from ReportResult").uniqueResult();
+		ps.setTotal(total);
+
+		return ps;
+	}
+
+}

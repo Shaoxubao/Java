@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.msm.model.ReportResult;
 import com.msm.model.Sample;
 import com.msm.model.SampleFlow;
 import com.msm.service.checker.service.ICheckService;
@@ -114,15 +115,32 @@ public class CheckerController {
 	}
 
 	/**
-	 * 查看检品的基本信息
+	 * 检验报告注册
 	 */
+	@RequestMapping(value="/addreport", method=RequestMethod.GET)
+	public String addreport(Model model) {
+		model.addAttribute(new ReportResult());
+		return "checker/add_report";
+	}
+
+	@RequestMapping(value="/addreport", method=RequestMethod.POST)
+    public String addSample(@Validated ReportResult reportResult, BindingResult br) {
+        if (br.hasErrors()) {
+            return "checker/add_report";
+        }
+
+        System.out.println(reportResult);
+        checkService.addReport(reportResult);
+        return "redirect:/check/listreport";
+    }
 
 	/**
-	 * 查看检品的相关标准
-	 */
-
-	/**
-	 * 查看有关的对照品信息
-	 */
+     * 所有报告列表
+     */
+    @RequestMapping(value="/listreport", method=RequestMethod.GET)
+    public String listreport(Model model) {
+        model.addAttribute("pagers", checkService.findReport());
+        return "checker/list_report";
+    }
 
 }

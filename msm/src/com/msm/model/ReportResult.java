@@ -22,8 +22,8 @@ public class ReportResult {
 	private String source;      // 检品来源
 	private String isChecked;   // 是否被检查
 	private String isStandard;  // 是否合格
-	private String checker;     // 审核人
-	private String checkDate;   // 审核日期
+	private String checker;     // 检验人
+	private String checkDate;   // 检验日期
 
 	@NotNull(message="检品检验结果Id号不能为空！")
 	@GeneratedValue

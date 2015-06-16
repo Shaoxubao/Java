@@ -24,7 +24,7 @@
 	});
 	</script>
 
-    <div class="ny_zbbt"><span>检品检验人员在线</span></div>
+    <div class="ny_zbbt"><span>检品检验人员</span></div>
     <div class="ny_zblb1">
       <ul class="clearfix">
         <li>
@@ -36,6 +36,14 @@
 	          <li><a href="<%=request.getContextPath()%>/check/commit" target="main">检验记录提交</a></li>
 	        </ul>
         </li>
+        <li>
+			<a class="cur" href="javascript:void(0)">检验报告管理</a>
+			<ul style="display:block;">
+				<li><a href="<%=request.getContextPath()%>/check/addreport" target="main">检验报告注册</a></li>
+	            <li><a href="<%=request.getContextPath()%>/check/listreport" target="main">检验报告列表</a></li>
+			</ul>
+		</li>
+
 		<li>
 			<a class="cur" href="javascript:void(0)">检验流程管理</a>
 			<ul style="display:block;">

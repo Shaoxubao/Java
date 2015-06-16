@@ -1,0 +1,22 @@
+package com.msm.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.msm.service.sample.service.ISampleService;
+
+/**
+ * 校对管理模块
+ */
+@Controller
+@RequestMapping("/final")
+public class JiaoduiController {
+
+	@Autowired
+	private ISampleService sampleService;
+
+	/**
+	 * 校对检验流程提交
+	 */
+}

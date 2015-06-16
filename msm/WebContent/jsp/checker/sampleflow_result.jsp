@@ -36,19 +36,19 @@
                 <td>科室主任审校发出日期:</td><td>${sampleFlow.zhurenSend}<sf:hidden path="zhurenSend"/></td>
             </tr>
             <tr>
-                <td>业务管理室审签收到日期:</td><td>${sampleFlow.ywssqRev}<sf:hidden path="ywssqRev"/></td>
+                <td>业务管理室收到日期:</td><td>${sampleFlow.ywssqRev}<sf:hidden path="ywssqRev"/></td>
             </tr>
             <tr>
-                <td>业务管理室审签发出日期:</td><td>${sampleFlow.ywssqSend}<sf:hidden path="ywssqSend"/></td>
+                <td>业务管理室发出日期:</td><td>${sampleFlow.ywssqSend}<sf:hidden path="ywssqSend"/></td>
             </tr>
             <tr>
-                <td>受权签字人审签收到日期:</td><td>${sampleFlow.headRev}<sf:hidden path="headRev"/></td>
+                <td>审签收到日期:</td><td>${sampleFlow.headRev}<sf:hidden path="headRev"/></td>
             </tr>
             <tr>
-                <td>受权签字人审签发出日期:</td><td>${sampleFlow.headSend}<sf:hidden path="headSend"/></td>
+                <td>审签发出日期:</td><td>${sampleFlow.headSend}<sf:hidden path="headSend"/></td>
             </tr>
              <tr>
-                <td>校对收到日期:</td><td><sf:hidden path="jiaoduiRev"/></td>
+                <td>校对收到日期:</td><td>${sampleFlow.jiaoduiRev}<sf:hidden path="jiaoduiRev"/></td>
             </tr>
             <tr>
                 <td>校对发出日期:</td><td>${sampleFlow.jiaoduiSend}<sf:hidden path="jiaoduiSend"/></td>

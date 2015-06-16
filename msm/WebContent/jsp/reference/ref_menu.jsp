@@ -29,15 +29,26 @@ $(function () {
 	    <div class="ny_zblb1">
 		      <ul class="clearfix">
 		      	<li>
-			        <a class="cur" href="javascript:void(0)">后勤保障管理</a>
+			        <a class="cur" href="javascript:void(0)">对照品管理</a>
 			        <ul style="display:block;">
 			          <li><a href="<%=request.getContextPath()%>/support/addref" target="main">对照品注册</a></li>
 			          <li><a href="<%=request.getContextPath()%>/samplem/deletesample" target="main">对照品删除</a></li>
 			          <li><a href="<%=request.getContextPath()%>/samplem/update" target="main">修改对照品信息</a></li>
 			          <li><a href="<%=request.getContextPath()%>/support/refs" target="main">查看对照品列表</a></li>
-			          <li><a href="<%=request.getContextPath()%>/samplem/show" target="main">查询对照品信息</a></li>
-			          <li><a href="<%=request.getContextPath()%>/support/rules" target="main">药监规章制度</a></li>
 			        </ul>
+		        </li>
+		        <li>
+		        	 <a class="cur" href="javascript:void(0)">检验流程</a>
+			         <ul style="display:block;">
+		        	 <li><a href="<%=request.getContextPath()%>/support/reportcommit" target="main">检验流程提交</a></li>
+		        	 <li><a href="<%=request.getContextPath()%>/check/listreport" target="main">检验报告查看</a></li>
+		        	 </ul>
+		        </li>
+		        <li>
+		        	 <a class="cur" href="javascript:void(0)">对照品管理</a>
+			         <ul style="display:block;">
+		        	 <li><a href="<%=request.getContextPath()%>/support/rules" target="main">药监规章制度</a></li>
+		        	 </ul>
 		        </li>
 		      </ul>
 	    </div>

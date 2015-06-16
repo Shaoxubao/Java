@@ -1,0 +1,43 @@
+package com.msm.constants;
+
+public enum UserPosition {
+
+    ADMIN_MANAGE(0, "管理员"),           // 管理员
+
+    PRODUCT_CHECK_REG(1, "检品登记"),    // 检品登记人员
+
+    PRODUCT_INSPECT(2, "检品检验"),      // 检验人员(主检科室)
+
+    QUALITY_MANAGE(3, "质保科管理"),     // 质保科管理人员(会检科室)
+
+    LOGISTICS_PERSONNEL(4, "后勤保障"),  // 后勤保障人员
+
+    KESHI_ZHUREN(5, "科室主任"),         // 科室主任
+
+    YEWU_MANAGE(6, "业务管理"),        // 业务管理
+
+    SIGNER_MANAGE(7, "受权签字人"),      // 受权签字人
+
+    JIAODUI_MANAGE(8, "校对管理"),       // 校对
+
+    FINAL_CHECK(9, "最终检验"),          // 最终检验
+
+    REPORT_PRINT(10, "报告打印");        // 报告打印人员
+
+    private final int value;
+    private final String desc;
+
+    private UserPosition(int value, String desc) {
+        this.value = value;
+        this.desc = desc;
+    }
+
+    public int value() {
+        return this.value;
+    }
+
+    public String desc() {
+        return this.desc;
+    }
+
+}

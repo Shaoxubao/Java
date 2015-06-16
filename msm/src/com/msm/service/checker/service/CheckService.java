@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.msm.dao.checker.dao.ICheckDao;
 import com.msm.model.Pager;
+import com.msm.model.ReportResult;
 import com.msm.model.Sample;
 
 @Service("checkService")
@@ -31,6 +32,16 @@ public class CheckService implements ICheckService {
 	@Override
 	public void updateSample(Sample sample) {
 		checkDao.updateSample(sample);
+	}
+
+	@Override
+	public Pager<ReportResult> findReport() {
+		return checkDao.findReport();
+	}
+
+	@Override
+	public void addReport(ReportResult reportResult) {
+		checkDao.addReport(reportResult);
 	}
 
 }

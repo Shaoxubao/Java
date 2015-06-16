@@ -1,0 +1,18 @@
+package com.msm.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+/**
+ * 最终检验模块
+ */
+@Controller
+@RequestMapping("/final")
+public class FinalController {
+
+	/**
+	 * 最终检验流程提交
+	 */
+	finalflowcommit
+	
+}

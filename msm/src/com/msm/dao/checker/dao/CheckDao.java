@@ -11,6 +11,7 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import org.springframework.stereotype.Repository;
 
 import com.msm.model.Pager;
+import com.msm.model.ReportResult;
 import com.msm.model.Sample;
 import com.msm.util.SystemContext;
 
@@ -71,6 +72,32 @@ public class CheckDao extends HibernateDaoSupport implements ICheckDao {
 			} catch (Exception e2) {
 			}
 		}
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public Pager<ReportResult> findReport() {
+		int size = SystemContext.getSize();
+		int offset = SystemContext.getOffset();
+
+		Query query = this.getSession().createQuery("from ReportResult");
+		query.setFirstResult(offset).setMaxResults(size);
+		List<ReportResult> datas = query.list();
+
+		Pager<ReportResult> ps = new Pager<ReportResult>();
+		ps.setDatas(datas);
+		ps.setOffset(offset);
+		ps.setSize(size);
+		long total = (long) this.getSession()
+				.createQuery("select count(*) from ReportResult").uniqueResult();
+		ps.setTotal(total);
+
+		return ps;
+	}
+
+	@Override
+	public void addReport(ReportResult reportResult) {
+		this.getHibernateTemplate().save(reportResult);
 	}
 
 }

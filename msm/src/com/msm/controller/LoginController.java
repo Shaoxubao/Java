@@ -42,14 +42,21 @@ public class LoginController {
         model.addAttribute("loginUser", u);
         String userPos = u.getUserPosition();
         if (UserPosition.ADMIN_MANAGE.desc().equals(userPos)) {
-            return "user/admin"; // 管理员
+            return "user/admin";       // 管理员
         } else if (UserPosition.PRODUCT_CHECK_REG.desc().equals(userPos)) {
             return "sample/regi_main"; // 检品注册
         } else if (UserPosition.LOGISTICS_PERSONNEL.desc().equals(userPos)) {
         	return "reference/ref_main"; // 后勤保障
         } else if (UserPosition.PRODUCT_INSPECT.desc().equals(userPos)) {
-        	return "checker/check_main"; // 打印报告
-        } else {
+        	return "checker/check_main"; // 检验人员
+        } else if (UserPosition.FINAL_CHECK.desc().equals(userPos)) {
+        	return "final/final_main";   // 最终检验
+        } else if (UserPosition.JIAODUI_MANAGE.desc().equals(userPos)) {
+        	return "jiaodui/jiaodui_main";   // 校对管理
+        } else if (UserPosition.SIGNER_MANAGE.desc().equals(userPos)) {
+        	return "shenqian/shenqian_main"; // 审签管理
+        }
+        else {
              return null;
         }
 

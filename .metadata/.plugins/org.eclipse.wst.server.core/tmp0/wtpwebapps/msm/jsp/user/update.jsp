@@ -29,8 +29,8 @@
         <td>用户电话：</td><td><sf:password path="telephone"/><sf:errors path="telephone"/></td>
       </tr>
       <tr>
-        <td colspan="2">
-          <input type="submit" value="用户更新"/>
+        <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="用户更新"/>
         </td>
       </tr>
     </table>

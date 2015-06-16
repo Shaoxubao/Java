@@ -1,0 +1,13 @@
+package com.msm.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+/**
+ * 审签模块管理
+ */
+@Controller
+@RequestMapping("/final")
+public class ShenqianController {
+	shenqianflowcommit
+}
