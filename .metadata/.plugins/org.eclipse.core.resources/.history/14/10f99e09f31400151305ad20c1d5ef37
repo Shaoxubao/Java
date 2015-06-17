@@ -1,0 +1,36 @@
+package com.msm.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.msm.service.sample.service.ISampleService;
+
+/**
+ * 审签模块管理
+ */
+@Controller
+@RequestMapping("/yewu")
+public class YewuController {
+
+	@Autowired
+	private ISampleService sampleService;
+
+	/**
+	 * 最终检验流程提交
+	 */
+	@RequestMapping(value = "/yewuflowcommit", method = RequestMethod.GET)
+	public String reportcommit(Model model) {
+		model.addAttribute("pagers", sampleService.findSampleFlow());
+		return "yewu/list_sampleflow";
+	}
+
+	@RequestMapping(value = "/{sampleNo}/yewuflowcommit", method = RequestMethod.GET)
+	public String reportcommit(@PathVariable String sampleNo, Model model) {
+		model.addAttribute(sampleService.loadBySampleFlowNo(sampleNo));
+		return "yewu/sampleflow_yewu";
+	}
+}

@@ -25,7 +25,7 @@
                                              密&nbsp;&nbsp;&nbsp;&nbsp;码:<input type="password" name="password" class="pwd" id="pwd"/><br/>
                   </div>
                   <br>
-                  <div id="pos_area">
+                <!--    <div id="pos_area">
                                                                   身&nbsp;&nbsp;&nbsp;&nbsp;份:
                       <select style="width: 210px">
                           <option>管理员</option>
@@ -40,10 +40,10 @@
                           <option>最终检验</option>
                           <option>报告打印</option>
                       </select>
-                  </div>
+                  </div>   -->
 
                   <div id="btn_area">
-                     <input type="submit" class="login_btn" id="login_sub"  value="登  录">
+                     <input type="submit" class="login_btn" id="login_sub"  value="登  录">&nbsp;&nbsp;&nbsp;&nbsp;
                      <input type="reset" class="login_btn" id="login_ret" value="重 置">
                   </div>
               </form>
@@ -63,8 +63,8 @@
                   <a href="" target="_blank">全部分类</a>|
                   <a href="" target="_blank">金象导航</a>
               </p>
-              <p>版权所有：北京金象大药房医药连锁有限责任公司&nbsp;北京金象在线网络科技有限公司</p>
-            <p>Copyright? 制药厂 2015-2016， All Rights Reserved</p>
+              <p>版权所有：陕西省西安市药监局</p>
+            <p>Copyright? 药监局 2015-2016， All Rights Reserved</p>
           </div>
    </div>
 </body>

@@ -1,0 +1,36 @@
+package com.msm.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.msm.service.sample.service.ISampleService;
+
+/**
+ * 质保科模块管理
+ */
+@Controller
+@RequestMapping("/zhibaoke")
+public class ZhibaokeController {
+
+	@Autowired
+	private ISampleService sampleService;
+
+	/**
+	 * 最终检验流程提交
+	 */
+	@RequestMapping(value = "/zhibaokeflowcommit", method = RequestMethod.GET)
+	public String zhibaokeflowcommit(Model model) {
+		model.addAttribute("pagers", sampleService.findSampleFlow());
+		return "zhibaoke/list_sampleflow";
+	}
+
+	@RequestMapping(value = "/{sampleNo}/zhibaokeflowcommit", method = RequestMethod.GET)
+	public String zhibaokeflowcommit(@PathVariable String sampleNo, Model model) {
+		model.addAttribute(sampleService.loadBySampleFlowNo(sampleNo));
+		return "zhibaoke/sampleflow_zhibaoke";
+	}
+}

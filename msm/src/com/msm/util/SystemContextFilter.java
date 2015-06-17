@@ -22,7 +22,7 @@ public class SystemContextFilter implements Filter {
         try {
             offset = Integer.parseInt(req.getParameter("pager.offset"));
         } catch (NumberFormatException e) {}
-        
+
         try {
             SystemContext.setOffset(offset);
             SystemContext.setSize(15);

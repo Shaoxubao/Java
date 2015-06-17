@@ -1,0 +1,13 @@
+package com.msm.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+/**
+ * 科室主任模块管理
+ */
+@Controller
+@RequestMapping("/zhuren")
+public class ZhurenController {
+	zhurenflowcommit
+}

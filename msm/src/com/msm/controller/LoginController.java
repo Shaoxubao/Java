@@ -24,7 +24,7 @@ public class LoginController {
     private IUserService userService;
 
     /**
-     * 登录
+     * 登录模块
      */
     @RequestMapping(value="/login", method=RequestMethod.GET)
     public String login() {
@@ -35,6 +35,7 @@ public class LoginController {
     public String login(String username, String password, Model model, HttpServletRequest req, HttpServletResponse res) {
         User user = userService.loadByUsername(username);
         if (null == user){ // 用户名和密码判断
+        	System.out.println("user==null");
             return "login";
         }
 
@@ -42,6 +43,7 @@ public class LoginController {
         model.addAttribute("loginUser", u);
         String userPos = u.getUserPosition();
         if (UserPosition.ADMIN_MANAGE.desc().equals(userPos)) {
+        	System.out.println("admin login in");
             return "user/admin";       // 管理员
         } else if (UserPosition.PRODUCT_CHECK_REG.desc().equals(userPos)) {
             return "sample/regi_main"; // 检品注册
@@ -55,8 +57,13 @@ public class LoginController {
         	return "jiaodui/jiaodui_main";   // 校对管理
         } else if (UserPosition.SIGNER_MANAGE.desc().equals(userPos)) {
         	return "shenqian/shenqian_main"; // 审签管理
-        }
-        else {
+        } else if (UserPosition.YEWU_MANAGE.desc().equals(userPos)) {
+        	return "yewu/yewu_main";       // 业务管理
+        } else if (UserPosition.QUALITY_MANAGE.desc().equals(userPos)) {
+        	return "zhibaoke/zhibaoke_main"; // 质保科
+        } else if (UserPosition.KESHI_ZHUREN.desc().equals(userPos)) {
+        	return "zhuren/zhuren_main";     // 科室主任
+        } else {
              return null;
         }
 

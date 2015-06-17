@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>校对人员</title>
+<title>审签人员</title>
 
 <script type="text/javascript" src="../../js/jquery.min.js"></script>
 <link href="../../css/style.css" rel="stylesheet" type="text/css" />
@@ -24,11 +24,11 @@
 	});
 	</script>
 
-    <div class="ny_zbbt"><span>校对人员</span></div>
+    <div class="ny_zbbt"><span>审签人员</span></div>
     <div class="ny_zblb1">
       <ul class="clearfix">
         <li>
-        	<a class="cur" href="javascript:void(0)">最终检验管理</a>
+        	<a class="cur" href="javascript:void(0)">检品信息管理</a>
 	        <ul style="display:block;">
 	          <li><a href="<%=request.getContextPath()%>/samplem/show" target="main">检品信息</a></li>
 	          <li><a href="<%=request.getContextPath()%>/samplem/samples" target="main">检品列表</a></li>

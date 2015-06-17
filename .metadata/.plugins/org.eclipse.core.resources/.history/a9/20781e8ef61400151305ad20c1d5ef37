@@ -1,0 +1,13 @@
+package com.msm.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+/**
+ * 质保科模块管理
+ */
+@Controller
+@RequestMapping("/zhibaoke")
+public class ZhibaokeController {
+	zhibaokeflowcommit
+}
