@@ -6,12 +6,13 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name="t_user")
 public class User {
-    
+
     private int userId;          // 用户id标识
     private String staffId;      // 用户工号
     private String userName;     // 姓名
@@ -89,5 +90,5 @@ public class User {
         return "User [userId=" + userId + ", staffId=" + staffId + ", userName=" + userName + ", password=" + password
                + ", userDepart=" + userDepart + ", userPosition=" + userPosition + ", telephone=" + telephone + "]";
     }
-    
+
 }

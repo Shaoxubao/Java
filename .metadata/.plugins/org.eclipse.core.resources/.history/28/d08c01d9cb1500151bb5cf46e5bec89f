@@ -1,0 +1,129 @@
+package com.msm.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.msm.model.ReferenceReg;
+import com.msm.model.SampleFlow;
+import com.msm.service.sample.service.ISampleService;
+import com.msm.service.support.service.ISupportService;
+
+/**
+ * 后勤保障人员管理模块
+ */
+@Controller
+@RequestMapping("/support")
+public class SupportGuaranteeController {
+
+	@Autowired
+	private ISupportService supportService;
+
+	@Autowired
+	private ISampleService sampleService;
+
+	/**
+	 * 对照品信息列表
+	 */
+	@RequestMapping(value = "/refs", method = RequestMethod.GET)
+	public String listRef(Model model) {
+		model.addAttribute("pagers", supportService.find());
+		return "reference/list_ref";
+	}
+
+	/**
+	 * 对照品删除
+	 */
+	@RequestMapping(value="/delete", method=RequestMethod.GET)
+	public String delete(Model model) {
+		model.addAttribute("pagers", supportService.find());
+		return "reference/delete_ref";
+	}
+
+	@RequestMapping(value="/{staffId}/delete", method=RequestMethod.GET)
+    public String delete(@PathVariable String staffId) {
+
+		return "redirect:/support/refs";
+	}
+
+	/**
+	 * 输入对照品信息 Model构造url的要获取的参数值
+	 */
+	@RequestMapping(value = "/addref", method = RequestMethod.GET)
+	public String addReference(Model model) {
+		model.addAttribute(new ReferenceReg());
+		return "reference/add_ref";
+	}
+
+	@RequestMapping(value = "/addref", method = RequestMethod.POST)
+	public String addReference(@Validated ReferenceReg referencereg,
+			BindingResult br) {
+		if (br.hasErrors()) {
+			return "reference/add_ref";
+		}
+
+		supportService.addReference(referencereg);
+		return "redirect:/support/refs";
+	}
+
+	/**
+	 * 规章制度管理
+	 */
+	@RequestMapping(value = "/rules", method = RequestMethod.GET)
+	public String rules() {
+		return "rule/rules";
+	}
+
+	/**
+	 * 检验报告流程提交
+	 */
+	@RequestMapping(value = "/reportcommit", method = RequestMethod.GET)
+	public String reportcommit(Model model) {
+		model.addAttribute("pagers", sampleService.findSampleFlow());
+		return "reference/list_sampleflow";
+	}
+
+	@RequestMapping(value = "/{sampleNo}/reportcommit", method = RequestMethod.GET)
+	public String reportcommit(@PathVariable String sampleNo, Model model) {
+		model.addAttribute(sampleService.loadBySampleFlowNo(sampleNo));
+		return "reference/reportcommit_result";
+	}
+
+	@RequestMapping(value = "/{sampleNo}/reportcommit", method = RequestMethod.POST)
+	public String reportcommit(@PathVariable String sampleNo,
+			@Validated SampleFlow sampleFlow, BindingResult br, Model model) {
+		if (br.hasErrors()) {
+			model.addAttribute(sampleFlow);
+			return "reference/reportcommit_result";
+		}
+
+		SampleFlow s = sampleService.loadBySampleFlowNo(sampleNo);
+		s.setSampleNo(sampleFlow.getSampleNo());
+		s.setSampleName(sampleFlow.getSampleName());
+		s.setMianRev(sampleFlow.getMianRev());
+		s.setMianSend(sampleFlow.getMianSend());
+		s.setSecondRev(sampleFlow.getSecondRev());
+		s.setSecondSend(sampleFlow.getSecondSend());
+		s.setZhurenRev(sampleFlow.getZhurenRev());
+		s.setZhurenSend(sampleFlow.getZhurenSend());
+		s.setYwssqRev(sampleFlow.getYwssqRev());
+		s.setYwssqSend(sampleFlow.getYwssqSend());
+		s.setHeadRev(sampleFlow.getHeadRev());
+		s.setHeadSend(sampleFlow.getHeadSend());
+		s.setJiaoduiRev(sampleFlow.getJiaoduiRev());
+		s.setJiaoduiSend(sampleFlow.getJiaoduiSend());
+		s.setFachuRev(sampleFlow.getFachuRev());
+		s.setFachuSend(sampleFlow.getFachuSend());
+		s.setPrintRev(sampleFlow.getPrintRev());
+		s.setPrintSend(sampleFlow.getPrintSend());
+		sampleService.updateSampleFlow(s);
+
+		return "redirect:/samplem/sampleflow";
+	}
+
+}

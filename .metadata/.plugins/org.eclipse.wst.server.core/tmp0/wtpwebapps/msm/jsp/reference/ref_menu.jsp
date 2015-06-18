@@ -32,7 +32,7 @@ $(function () {
 			        <a class="cur" href="javascript:void(0)">对照品管理</a>
 			        <ul style="display:block;">
 			          <li><a href="<%=request.getContextPath()%>/support/addref" target="main">对照品注册</a></li>
-			          <li><a href="<%=request.getContextPath()%>/samplem/deletesample" target="main">对照品删除</a></li>
+			          <li><a href="<%=request.getContextPath()%>/support/delete" target="main">对照品删除</a></li>
 			          <li><a href="<%=request.getContextPath()%>/samplem/update" target="main">修改对照品信息</a></li>
 			          <li><a href="<%=request.getContextPath()%>/support/refs" target="main">查看对照品列表</a></li>
 			        </ul>

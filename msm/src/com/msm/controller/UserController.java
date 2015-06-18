@@ -15,6 +15,14 @@ import com.msm.service.IUserService;
 
 /**
  * 用户管理控制模块
+ *
+ * @Controller 控制器是通过服务接口定义的提供访问应用程序的一种行为，它解释用户的输入，
+ * 将其转换成一个模型然后将试图呈献给用户。Spring MVC 使用 @Controller 定义控制器，
+ * 它还允许自动检测定义在类路径下的组件并自动注册。如想自动检测生效，需在XML头文件下引入 spring-context:
+ *
+ *  @RequestMapping 注解将类似 “/user”这样的URL映射到整个类或特定的处理方法上。
+ *  一般来说，类级别的注解映射特定的请求路径到表单控制器上，
+ *  而方法级别的注解只是映射为一个特定的HTTP方法请求（“GET”，“POST”等）或HTTP请求参数。
  */
 @Controller
 @RequestMapping("/user")
@@ -35,11 +43,15 @@ public class UserController {
      *  用户添加
      */
     @RequestMapping(value = "/add", method = RequestMethod.GET)
-    public String add(Model model) {
+    public String add(Model model) { // Model类提供数据绑定
         model.addAttribute(new User());
         return "user/add";
     }
 
+    /**
+     * 使用 @Validated 与 BindingResult联合验证输入的参数，
+     * 在验证通过和失败的情况下，分别返回不同的视图。
+     */
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String add(@Validated User user, BindingResult br) {
         if (br.hasErrors()) {
@@ -47,7 +59,7 @@ public class UserController {
         }
         System.out.println(user);
         userService.add(user);
-            return "redirect:/user/users"; // 防止重复提交数据，可以使用重定向视图
+        return "redirect:/user/users"; // 防止重复提交数据，可以使用重定向视图
     }
 
     /**
@@ -68,6 +80,7 @@ public class UserController {
         return "user/delete";
     }
 
+    //  @PathVariable 注解方法参数并将其绑定到URI模板变量的值上。
     @RequestMapping(value="/{staffId}/delete", method=RequestMethod.GET)
     public String delete(@PathVariable String staffId) {
         User u = userService.loadByUserStaffId(staffId);

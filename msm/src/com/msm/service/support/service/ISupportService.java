@@ -7,5 +7,9 @@ public interface ISupportService {
 
 	public void addReference(ReferenceReg reference); // 对照品信息添加
 
+	public void delete(int id);
+
 	public Pager<ReferenceReg> find();
+
+	public ReferenceReg loadByRefId(String refId);
 }

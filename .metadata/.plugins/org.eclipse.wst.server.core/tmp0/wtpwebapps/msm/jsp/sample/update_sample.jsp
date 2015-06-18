@@ -48,7 +48,7 @@
                 <td>报告日期:</td><td><sf:input path="conclusionDate" /><sf:errors path="conclusionDate"/></td>
             </tr>
             <tr>
-              <td colspan="2">
+              <td colspan="2" align="center">
                 <input type="submit" value="检品更新"/>
               </td>
             </tr>

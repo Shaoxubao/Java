@@ -6,11 +6,13 @@ import javax.annotation.Resource;
 
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import org.springframework.stereotype.Repository;
 
 import com.msm.model.Pager;
 import com.msm.model.ReferenceReg;
+import com.msm.model.User;
 import com.msm.util.SystemContext;
 
 @Repository("supportDao")
@@ -41,10 +43,40 @@ public class SupportDao extends HibernateDaoSupport implements ISupportDao {
 		pr.setDatas(datas);
 		pr.setOffset(offset);
 		pr.setSize(size);
-		long total = (long) this.getSession().createQuery("select count(*) from ReferenceReg").uniqueResult();
+		long total = (long) this.getSession()
+				.createQuery("select count(*) from ReferenceReg")
+				.uniqueResult();
 		pr.setTotal(total);
 
 		return pr;
+	}
+
+	@Override
+	public ReferenceReg loadByRefId(String referenNo) {
+		return (ReferenceReg) this.getSession()
+				.createQuery("from ReferenceReg where referenNo=?")
+				.setParameter(0, referenNo).uniqueResult();
+	}
+
+	@Override
+	public void delete(int id) {
+		ReferenceReg referenceReg = this.load(id);
+		Transaction ts = (Transaction) this.getSession().beginTransaction();
+		try {
+			this.getHibernateTemplate().delete(referenceReg);
+			ts.commit(); // 事务提交
+		} catch (Exception e) {
+			System.out.println(e);
+			try {
+				ts.rollback();
+			} catch (Exception e2) {
+			}
+		}
+	}
+
+	@Override
+	public ReferenceReg load(int id) {
+		return this.getHibernateTemplate().load(ReferenceReg.class, id);
 	}
 
 }

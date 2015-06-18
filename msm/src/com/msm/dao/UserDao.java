@@ -24,7 +24,7 @@ public class UserDao extends HibernateDaoSupport implements IUserDao {
     public void setSuperSessionFactory(SessionFactory sessionFactory) {
         this.setSessionFactory(sessionFactory);
     }
-    
+
     @Override
     public void add(User user) {
         this.getHibernateTemplate().save(user);
@@ -57,7 +57,7 @@ public class UserDao extends HibernateDaoSupport implements IUserDao {
         return (User)this.getSession().createQuery("from User where username=?")
                 .setParameter(0, username).uniqueResult();
     }
-    
+
     @Override
     public User loadByUserStaffId(String staffId) {
         return (User)this.getSession().createQuery("from User where staffId=?")
@@ -69,11 +69,11 @@ public class UserDao extends HibernateDaoSupport implements IUserDao {
     public Pager<User> find() {
         int size = SystemContext.getSize();
         int offset = SystemContext.getOffset();
-        
+
         Query query = this.getSession().createQuery("from User"); // HQL(Hibernate Query Language)查询
         query.setFirstResult(offset).setMaxResults(size);
         List<User> datas = query.list();
-        
+
         Pager<User> us = new Pager<User>();
         us.setDatas(datas);
         us.setOffset(offset);
@@ -81,7 +81,7 @@ public class UserDao extends HibernateDaoSupport implements IUserDao {
         long total = (Long)this.getSession()
                     .createQuery("select count(*) from User").uniqueResult();
         us.setTotal(total);
-        
+
         return us;
     }
 

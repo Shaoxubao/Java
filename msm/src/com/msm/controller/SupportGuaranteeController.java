@@ -1,5 +1,8 @@
 package com.msm.controller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,6 +11,8 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.msm.model.ReferenceReg;
 import com.msm.model.SampleFlow;
@@ -36,6 +41,35 @@ public class SupportGuaranteeController {
 		return "reference/list_ref";
 	}
 
+	/**
+	 * 对照品删除
+	 */
+	@RequestMapping(value="/delete", method=RequestMethod.GET)
+	public String delete(Model model) {
+		model.addAttribute("pagers", supportService.find());
+		return "reference/delete_ref";
+	}
+
+	@RequestMapping(value="/{referenNo}/delete", method=RequestMethod.GET)
+    public String delete(@PathVariable String referenNo) {
+		System.out.println("********************");
+		ReferenceReg r = supportService.loadByRefId(referenNo);
+		System.out.println(r);
+		System.out.println(referenNo);
+		supportService.delete(r.getReferenId());
+		return "redirect:/support/refs";
+	}
+/*
+	// 批量删除
+    @RequestMapping(value="/delete",method=RequestMethod.POST)
+    public String delete(@RequestParam("items") int[] items, HttpServletRequest request,HttpServletResponse response) {
+    	System.out.println("批量删除");
+        for(int i = 0; i < items.length; i++) {
+        	supportService.delete(items[i]);
+        }
+        return "redirect:/support/refs";
+    }
+*/
 	/**
 	 * 输入对照品信息 Model构造url的要获取的参数值
 	 */

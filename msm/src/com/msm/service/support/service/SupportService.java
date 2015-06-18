@@ -23,4 +23,14 @@ public class SupportService implements ISupportService {
 		return supportDao.find();
 	}
 
+	@Override
+	public ReferenceReg loadByRefId(String refId) {
+		return supportDao.loadByRefId(refId);
+	}
+
+	@Override
+	public void delete(int id) {
+		supportDao.delete(id);
+	}
+
 }
